@@ -1,0 +1,24 @@
+Sub MailMergeToPdf()                                                        ' Mark the start of the Subroutine (i.e. Macro) and name it "MailMergeToPdf"
+    Dim masterDoc As Document, recordNum As Long, singleDoc As Document  ' Create variables ("Post-it Notes") for later use
+    Set masterDoc = ActiveDocument                                          ' Identify the ActiveDocument (foremost doc when Macro run) as "masterDoc"
+
+    masterDoc.MailMerge.DataSource.ActiveRecord = wdLastRecord
+
+    For recordNum = 1 To masterDoc.MailMerge.DataSource.ActiveRecord         ' Set "recordNum" to 1 and start loop | second part defines end point for loop
+        masterDoc.MailMerge.DataSource.ActiveRecord = recordNum             ' Change the active record in the MailMerge to the "recordNum"
+        masterDoc.MailMerge.Destination = wdSendToNewDocument               ' Identify that we are creating a word docx (and no e.g. an email)
+        masterDoc.MailMerge.DataSource.FirstRecord = recordNum              ' Limit the selection to just one document by setting the start ...
+        masterDoc.MailMerge.DataSource.LastRecord = recordNum               ' ... and end points to the same number (which is the same as the active record)
+        masterDoc.MailMerge.Execute False                                   ' run the MailMerge based on the above settings (i.e. for one record)
+        Set singleDoc = ActiveDocument                                      ' Identify the ActiveDocument (foremost doc after running the MailMerge) as "singleDoc"
+        singleDoc.SaveAs _
+            FileName:=masterDoc.MailMerge.DataSource.DataFields("DocFolderPath").Value & "/" & _
+                masterDoc.MailMerge.DataSource.DataFields("DocFileName").Value & ".docx", _
+            fileFormat:=wdFormatXMLDocument                                 ' Save "singleDoc" as a word docx with the details provided in the DocFolderPath and DocFileName fields in the MailMerge data
+        singleDoc.SaveAs _
+            FileName:=masterDoc.MailMerge.DataSource.DataFields("PdfFolderPath").Value & "/" & _
+                masterDoc.MailMerge.DataSource.DataFields("PdfFileName").Value & ".pdf", _
+            fileFormat:=wdFormatPDF                                              ' Export "singleDoc" as a PDF with the details provided in the PdfFolderPath and PdfFileName fields in the MailMerge data
+        singleDoc.Close False                                               ' Close "singleDoc", the variable "singleDoc" can now be used for the next record when created
+    Next recordNum                                                          ' Add one to "recordNum" and return to the beginning of the loop (line under "For recordNum = 1 ..."
+End Sub                                                                     ' Mark the end of the Subroutine

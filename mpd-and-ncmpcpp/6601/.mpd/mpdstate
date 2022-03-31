@@ -1,0 +1,90 @@
+sw_volume: 100
+audio_device_state:1:Pulse Audio
+audio_device_state:1:my_fifo
+state: stop
+current: 7
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Ada Band - Pemain Cinta.mp3
+1:faun/Faun, Santiano - Tanz mit mir.mp3
+2:Ada Band - Karena Wanita (Ingin Dimengerti).mp3
+3:faun/Faun - Diese kalte Nacht.mp3
+4:mix/Diskoria feat. Dian Sastrowardoyo - Serenata Jiwa Lara (Official Audio).mp3
+5:Ada Band, Ubiet - Jalan Cahaya (feat. Ubiet).mp3
+6:faun/Faun - Federkleid.mp3
+7:Tipe-X - Kamu Nggak Sendirian.mp3
+8:Tipe-X - Mawar Hitam.mp3
+9:Sia - Snowman.mp3
+10:Firehouse - I Live My Life for You.mp3
+11:mng/Yollanda & Arief - Emas Hantaran (Official Mucic Video) Lagu Pop Melayu Terbaru.mp3
+12:System Of A Down - Lonely Day.mp3
+13:Metallica - Mama Said.mp3
+14:Wage War - High Horse.mp3
+15:Tipe-X - Salam Rindu.mp3
+16:Tipe-X - Selamat Jalan.mp3
+17:System Of A Down - B.Y.O.B..mp3
+18:System Of A Down - RadioVideo.mp3
+19:Nicky Tirta, Vanessa Angel - Indah Cintaku.mp3
+20:Radiohead - No Surprises.mp3
+21:mng/Arief - Hendaklah Cari Pengganti.mp3
+22:mix/Breaking Benjamin - So Cold [HQ].mp3
+23:mix/Bullet For My Valentine - Riot (Audio).mp3
+24:mix/Delain - Hit Me With Your Best Shot HD.mp3
+25:mix/Dewa 19 - Takkan Ada Cinta Yg Lain. Suara Jernih Rekaman CD..mp3
+26:mix/Disturbed - A Reason To Fight (Audio).mp3
+27:mix/Disturbed - Hold On To Memories [Official Lyrics Video].mp3
+28:mix/Disturbed - The Sound Of Silence (Audio).mp3
+29:mix/Dream Theater The Glass Prison.mp3
+30:mix/Feel.mp3
+31:mix/Guns N' Roses Patience 1988 HQ.mp3
+32:mix/Hear Me Now - Hollywood Undead.mp3
+33:mix/Hollywood Undead - Bullet (Lyric Video).mp3
+34:mix/Ipank - Den Japuik (Official Music Video) Lagu Minang Terbaru 2019.mp3
+35:mix/KAKA MAIN SALAH [ Official lyric video ].mp3
+36:mix/KAKA MAIN SALAH X BELIS MAHAL - PUTRY PASANEA FT KAPTHENPUREK ( OFFICIAL MUSIC VIDEO ).mp3
+37:mix/Led Zeppelin - Stairway To Heaven (Official Audio).mp3
+38:mix/Lirik lagu SEVENTEEN sumpah ku mencintaimu.mp3
+39:mix/Moonlight Sonata (Ringtone) Cole Rolland.mp3
+40:mix/Moonlight Sonata (Ringtone) Dr. Viossy.mp3
+41:mix/ngarai sianok.mp3
+42:mix/Novia Kolopaking - Asmara - Composer Chossy Pratama 1997 (CDQ).mp3
+43:mix/Red Hot Chili Peppers Snow (Hey oh) (HQ, HD Audio).mp3
+44:mix/SEBUJUR BANGKAI (Rhoma Irama) - Tiya (Dangdut Cover).mp3
+45:mix/Sympathy - Larval Stage Planning.mp3
+46:mix/The Diary Of Jane.mp3
+47:mix/Venom (Music From The Motion Picture).mp3
+48:mix/Ylvis - Janym (Жаным).mp3
+49:mix/Ungu ft. Andien - Saat Bahagia (lirik).mp3
+50:mix/Killer Queen.mp3
+51:mix/Bohemian Rhapsody.mp3
+52:mix/Bullet - Hollywood Undead.mp3
+53:mix/Greta Van Fleet - Safari Song.mp3
+54:mix/Firehouse - Love Of A Lifetime.mp3
+55:mix/Sabaton - Smoking Snakes.mp3
+56:mix/Won t Go Home Without You.mp3 filename=UTF-8  Won t Go Home Without You.mp3
+57:mix/Memories.mp3
+58:mix/Scene Nine Finally Free.mp3
+59:mix/Fireflies.mp3
+60:mix/One More Night.mp3
+61:mix/Daylight.mp3
+62:mix/Lucky Strike.mp3
+63:mix/Sad.mp3
+64:mix/Moves Like Jagger.mp3
+65:mix/Breath.mp3
+66:mix/Hotel California.mp3
+67:mix/Lyin  Eyes.mp3 filename=UTF-8  Lyin  Eyes.mp3
+68:mix/Stratovarius - Coming Home.mp3
+69:Firehouse - Here for You.mp3
+70:Passenger - Let Her Go.mp3
+71:Shania Twain - You're Still The One.mp3
+72:Pantera - Cowboys from Hell.mp3
+73:Pantera - Domination.mp3
+74:Radiohead - Creep.mp3
+75:Arief - Hendaklah Cari Pengganti.mp3
+playlist_end

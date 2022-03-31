@@ -1,0 +1,23 @@
+POST INSTALL DEBIAN 11
+
+this dependencies is mostly to build suckless software (dwm,st,dmenu,etc)
+sudo apt install git curl wget gcc make vim neovim neofetch libx11-dev libxft-dev libxinerama-dev xorg libharfbuzz-dev rofi hsetroot rofi
+
+application (optional):
+inkscape, gimp, blender, kdenlive, handbrake, audacity, gnome-boxes
+veyon, wine, winbox, wps-office
+
+unoconv = terminal base office converter
+available in debian repositories
+
+change boot time grub:
+cd /etc/default
+sudo cp grub gurb.bk
+sudo vim /etc/default/grub
+set grub timeout into <x>
+ex :
+GRUB_TIMEOUT=0
+save
+sudo update-grub2
+restart
+

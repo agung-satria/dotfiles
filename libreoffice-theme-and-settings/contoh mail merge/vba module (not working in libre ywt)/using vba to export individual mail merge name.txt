@@ -1,0 +1,51 @@
+for libreoffice, don't work yet
+
+Option Explicit
+
+Const FOLDER_SAVED As String = "/home/agung/Documents/contoh mail merge"
+Const SOURCE_FILE_PATH As String = "/home/agung/Documents/contoh mail merge/asal sekolah.ods"
+
+Sub MailMergeToIndPDF()
+Dim MainDoc As Document, TargetDoc As Document
+Dim dbPath As String
+Dim recordNumber As Long, totalRecord As Long
+
+Set MainDoc = ActiveDocument
+With MainDoc.MailMerge
+    
+        '// if you want to specify your data, insert a WHERE clause in the SQL statement
+        .OpenDataSource Name:=SOURCE_FILE_PATH, sqlstatement:="SELECT * FROM [Sheet1]"
+            
+        totalRecord = .DataSource.RecordCount
+
+        For recordNumber = 1 To totalRecord
+        
+            With .DataSource
+                .ActiveRecord = recordNumber
+                .FirstRecord = recordNumber
+                .LastRecord = recordNumber
+            End With
+            
+            .Destination = wdSendToNewDocument
+            .Execute False
+            
+            Set TargetDoc = ActiveDocument
+
+            TargetDoc.SaveAs2 FOLDER_SAVED & .DataSource.DataFields("nama").Value & ".odt", wdFormatDocumentDefault
+            TargetDoc.ExportAsFixedFormat FOLDER_SAVED & .DataSource.DataFields("nama").Value & ".pdf", exportformat:=wdExportFormatPDF
+            TargetDoc.Close False
+            Set TargetDoc = Nothing
+        Next recordNumber
+End With
+   ' Comment 3 baris di bawah jika tidak ingin meghapus file word-nya
+    'On Error Resume Next
+    'Kill FOLDER_SAVED & "*.ods"
+    'On Error GoTo 0
+Set MainDoc = Nothing
+End Sub
+'adopted from https://learndataanalysis.org/automate-mail-merge-to-save-each-record-individually-with-word-vba/
+'with additional delete docx file
+
+
+'View raw
+'MailMergetoIndividualPDF.vb hosted with ? by GitHub

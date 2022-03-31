@@ -1,0 +1,16 @@
+#!/bin/bash
+echo -e "Please provide filename you want create: \c"
+read -r file
+touch $HOME/.local/bin/$file
+echo '#!/bin/bash' > $HOME/.local/bin/$file
+echo '#Purpose: ' >> $HOME/.local/bin/$file
+echo '#Version: ' >> $HOME/.local/bin/$file
+echo '#Created Date: ' `date` >> $HOME/.local/bin/$file
+echo '#Modified Date: ' >> $HOME/.local/bin/$file
+echo '#Author: Agung Satria' >> $HOME/.local/bin/$file
+echo '# START #' >> $HOME/.local/bin/$file
+echo '# END #' >> $HOME/.local/bin/$file
+sudo chmod 777 $HOME/.local/bin/$file
+echo "Bash Script Template is Successfully Created!"
+echo "And Stored to $HOME/.local/bin"
+cd $HOME/.local/bin
