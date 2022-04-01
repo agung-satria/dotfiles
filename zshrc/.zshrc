@@ -1,3 +1,10 @@
+# run script automatically after login into tty
+if [[ "$(tty)" == "/dev/tty1" ]]
+ then
+  ~/.local/bin/xsessions
+  # do whatever you want here
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -115,6 +122,9 @@ alias la="ls -la"
 alias ltr="ls -ltrh"
 alias ltra="ls -ltrah"
 alias f="ranger"
+alias m="ncmpcpp"
+alias music="mpd && ncmpcpp"
+alias topp="bpytop.py"
 alias myfedora="cd /home/agung/Documents/my-fedora"
 alias startobs-VirtualCamera="sudo modprobe v4l2loopback"
 alias startapache="sudo systemctl start httpd && lampstatus"
@@ -125,9 +135,18 @@ alias stopapache="sudo systemctl stop httpd && lampstatus"
 alias stopmysql="sudo systemctl stop mariadb && lampstatus"
 alias startlamp="sudo systemctl start httpd && sudo systemctl start mariadb && lampstatus"
 alias stoplamp="sudo systemctl stop httpd && sudo systemctl stop mariadb && lampstatus"
+alias cdd="cd ~/.dwm/dwm"
+alias killallbash="killall bash && killall /bin/bash"
+alias rmswap="rm ~/.local/share/nvim/swap/*"
+alias x="xsessions"
+alias poweroff="systemctl poweroff"
+alias reboot="systemctl reboot"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
+
+# Reflecting automatically ~/.Xresources to xterm
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

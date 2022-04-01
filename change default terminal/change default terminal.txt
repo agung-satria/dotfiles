@@ -1,0 +1,2 @@
+sudo update-alternatives --install /usr/local/bin/st
+x-terminal-emulator /usr/bin/st 100
