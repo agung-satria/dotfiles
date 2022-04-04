@@ -141,6 +141,8 @@ alias rmswap="rm ~/.local/share/nvim/swap/*"
 alias x="xsessions"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
+alias xfast="xset r rate 300 50"
+alias xdefault="xset r rate 460 25"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
