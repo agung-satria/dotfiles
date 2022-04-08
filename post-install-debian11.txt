@@ -43,3 +43,15 @@ sudo dpkg-reconfigure console-setup
 sudo update-initramfs -u
 sudo update-grub2
 
+source list:
+sudo nvim /etc/apt/sources.list
+add contrib non-free, in each last line
+ex :
+deb http://deb.debian.org/debian bullseye main contrib non-free
+deb-src http://deb.debian.org/debian bullseye main contrib non-free
+
+deb http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib non-free
+
+deb http://deb.debian.org/debian bullseye-updates main contrib non-free
+deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free

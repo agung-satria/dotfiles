@@ -5,8 +5,8 @@
 #Modified Date: 
 #BY: Agung Satria
 # START #
-apachestatus="$(sudo systemctl status httpd.service | awk 'NR==5 { print $2 }')"
-mysqlstatus="$(sudo systemctl status mariadb.service | awk 'NR==3 { print $2 }')"
+apachestatus="$(sudo systemctl status apache2.service | awk 'NR==3 { print $2 }')"
+mysqlstatus="$(sudo systemctl status mysql.service | awk 'NR==3 { print $2 }')"
 echo -e "\033[33mLAMP Control Panel\033[0m"
 if [ $apachestatus = "inactive" ]; then
     echo -e "Apache: \033[31m$apachestatus\033[0m"
