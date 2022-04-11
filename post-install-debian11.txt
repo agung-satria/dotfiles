@@ -55,3 +55,9 @@ deb-src http://deb.debian.org/debian-security/ bullseye-security main contrib no
 
 deb http://deb.debian.org/debian bullseye-updates main contrib non-free
 deb-src http://deb.debian.org/debian bullseye-updates main contrib non-free
+
+Right alt not working:
+Open "Tweaks" (aka "Gnome Tweaks")
+go to
+Keyboard & Mouse > Additional Layout Options > Key to choose the 3rd level
+and put a check mark on Right Alt never chooses 3rd level.
