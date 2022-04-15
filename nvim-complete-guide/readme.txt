@@ -8,11 +8,12 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
        
 2. install node v12.12+ and npm
-sudo apt-get install curl software-properties-common 
-curl -sL https://deb.nodesource.com/setup_16.x | sudo bash - 
-sudo apt-get install nodejs 
+sudo pacman -S nodejs npm
 node -v
 npm -v
+
+3. sudo pacman -S python-pip
+pip install pynvim --upgrade
 
 :so % (inside nvim) or r
 :PlugInstall (inside nvim)
@@ -101,7 +102,7 @@ or
 <leader>ez
 ===========================================================================================================================
 If error:
-run :CheckHealth
+run :checkhealth
 example error pynvim not installed
 so... pip install pynvim
 ===========================================================================================================================

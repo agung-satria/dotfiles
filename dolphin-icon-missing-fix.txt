@@ -10,7 +10,8 @@ Possible workaround solution which I have tested and know works.
 Solution in Cinnamon / i3 windows mangers to get GTK theme on Qt:
 
 Install qt5ct
-Set environment variable in /etc/environment or ~/.bash_profile QT_QPA_PLATFORMTHEME=qt5ct
+Set environment variable in /etc/environment or ~/.bash_profile
+QT_QPA_PLATFORMTHEME=qt5ct
 Restart the system
 Start qt5ct and select gtk2
 

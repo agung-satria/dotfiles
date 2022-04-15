@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font :pixelsize=22:antialias=true:autohint=true";
-static char *font2[] = { "JetBrainsMono Nerd Font :pixelsize=22:antialias=true:autohint=true" };
+static char *font = "JetBrainsMono Nerd Font :pixelsize=21:antialias=true:autohint=true";
+static char *font2[] = { "JetBrainsMono Nerd Font :pixelsize=21:antialias=true:autohint=true" };
 static int borderpx = 0;
 
 /*
@@ -121,23 +121,23 @@ float alpha = 1.0;
 static const char *colorname[] = {
 
 /* ########################alcrt color####################### */
-    "#171421", /* black  */
-    "#c01c28", /* red    */
-    "#26a269", /* green  */
-    "#a2734c", /* yellow */
-    "#12488b", /* blue   */
-    "#a347ba", /* magenta*/
-    "#2aa0b2", /* cyan   */
-    "#d0cfcc", /* white  */
+    "#14191e", /* black  */
+    "#b43c29", /* red    */
+    "#00c200", /* green  */
+    "#f1fa8c", /* yellow */
+    "#2743c7", /* blue   */
+    "#bf3fbd", /* magenta*/
+    "#00c5c7", /* cyan   */
+    "#c7c7c7", /* white  */
 
 
-    "#5e5c64",   /* black   */
-    "#f66151",   /* red     */
-    "#33d17a",   /* green   */
-    "#e9ad0c",   /* yellow  */
-    "#2a7bde",   /* blue    */
-    "#c061cb",   /* magenta */
-    "#33c7de",   /* cyan    */
+    "#676767",   /* black   */
+    "#dc7974",   /* red     */
+    "#57e690",   /* green   */
+    "#f1fa8c",   /* yellow  */
+    "#a6aaf1",   /* blue    */
+    "#e07de0",   /* magenta */
+    "#5ffdff",   /* cyan    */
     "#feffff",   /* white   */
 
   [255] = 0,
@@ -145,8 +145,7 @@ static const char *colorname[] = {
   "#add8e6", /* 256 -> cursor */
 	"#555555", /* 257 -> rev cursor*/
 	"#14191e", /* 258 -> bg */
-	// "#ebdbb2", /* 259 -> fg */
-  "#f7f7f7", /* 259 -> fg */
+	"#ebdbb2", /* 259 -> fg */
 };
 /* ########################end of alcrt color####################### */
 

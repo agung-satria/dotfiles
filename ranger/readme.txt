@@ -1,15 +1,14 @@
 cp all (except) readme to ~/.config/ranger
 
-sudo apt install python3-pip
-pip3 install ranger-fm ueberzug
+sudo pacman -S ranger ueberzug
 untuk video preview:
-sudo apt install ffmpegthumbnailer
-sudo apt install libimage-exiftool-perl feh zathura trash-cli
+sudo pacman -S ffmpeg ffmpegthumbnailer
+sudo pacman -S perl-image-exiftool feh zathura trash-cli
 dev icons:
 git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
 
 drag and drop using Ctrl-d:
-sudo apt install libghc-gtk3-dev
+sudo pacman -S ghc-libs
 git clone https://github.com/mwh/dragon
 (this repo is cloned, and zipped/not built yet)
 tar -xf dragon.tar.xz
