@@ -1,10 +1,9 @@
 sudo pacman -S dunst
-add to startup file (coolautostart on dwm).
+add "dunst" to startup file (ex: coolautostart on dwm).
 
-cp /etc/dunst/dunstrc ~/.config/dunst/dunstrc
 mkdir ~/.local/share/sounds
-cd ~/.local/share/sounds
-mv ~/Downloads/audio.mp3 .
+cp ./sounds/*.wav ~/.local/share/sounds
+cp ./bin/* ~/.local/bin
 
 convert mp3 to ogg, so it can play using paplay (wav also work i tried)
 ffmpeg audio.mp3 -vn audio.ogg

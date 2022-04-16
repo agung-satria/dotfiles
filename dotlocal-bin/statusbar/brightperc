@@ -1,8 +1,8 @@
 #!/bin/sh
-#  A dwm_bar module to display the current backlight brightness with xbacklight
 
+icon=☀
 brightness="$(cat /sys/class/backlight/amdgpu_bl0/brightness)"
-total=255
-percent=$((100*$brightness/$total))
-
-echo "☀$percent%"
+total="255"
+percent="$((100*$brightness/$total))"
+echo $icon$percent%
+# echo ☀$brightness

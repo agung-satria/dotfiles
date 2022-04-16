@@ -386,6 +386,6 @@
 #
 # vim: ft=cfg
 
-[play_sound]
-  summary = "*"
-  script = "/home/agung/.local/bin/alert"
+# [play_sound]
+#   summary = "*"
+#   script = "/home/agung/.local/bin/sound_notification"

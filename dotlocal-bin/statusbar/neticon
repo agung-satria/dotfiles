@@ -6,14 +6,14 @@ network() {
 	wifi="$(ip a | grep wlp1s0 | grep inet | wc -l)"
 
 	if [ $wire = 1 ]; then
-	        echo "🌐"
+	        echo "✅"
        elif [ $wire2 = 1 ]; then
-               echo "🌐"
+               echo "✅"
        elif [ $wifi = 1 ]; then
-   	        echo "🌐"
+   	        echo "✅"
    	   else
-	   echo "睊"
+	   echo "❌睊"
 	fi
 }
-#  ﴹ  睊  ﯥ  🖥️💻 🌐 
+#  ﴹ  睊  ﯥ ❎✅  🖥️ 💻 🌐  
 echo "$(network)"

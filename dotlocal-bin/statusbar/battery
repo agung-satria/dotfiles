@@ -45,7 +45,7 @@ bat() {
 
     # ========no percentage=========
         # batstat=" "
-        batstat="$battery% "
+        batstat="$battery%"
         elif [[ $battery -ge 5 ]] && [[ $battery -le 10 ]]; then
         batstat=""
         elif [[ $battery -ge 11 ]] && [[ $battery -le 20 ]]; then
