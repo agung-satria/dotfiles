@@ -1,0 +1,34 @@
+#!/bin/bash
+echo -e "Enter script name: \c"
+read -r file
+touch ~/.local/bin/$file
+echo '#!/bin/bash' > ~/.local/bin/$file
+echo '#Descriptions: ' >> ~/.local/bin/$file
+echo '#Version: ' >> ~/.local/bin/$file
+echo '#Created Date: ' `date` >> ~/.local/bin/$file
+echo '#Modified Date: ' >> ~/.local/bin/$file
+echo '#By: Agung Satria' >> ~/.local/bin/$file
+echo '# START #' >> ~/.local/bin/$file
+echo '' >> ~/.local/bin/$file
+echo '# END #' >> ~/.local/bin/$file
+sudo chmod 777 ~/.local/bin/$file
+echo -e "--------------------------------------"
+echo "$file is Created!"
+echo "~/.local/bin/$file"
+echo -e "--------------------------------------"
+function editscript {
+echo "Edit $file?"
+echo "Y/n"
+read -r edityn
+if [ "$edityn" == y ]; then 
+  nvim ~/.local/bin/$file
+elif [ -z $edityn ]; then
+  nvim ~/.local/bin/$file
+elif [ "$edityn" == n ]; then
+  echo "Done!"
+  return
+else
+  echo "Done!"
+fi
+}
+editscript
