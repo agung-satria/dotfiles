@@ -5,7 +5,7 @@
 #Modified Date: 
 #Author: Agung Satria
 # START #
-xclip -select clipboard /home/agung/Downloads/access-token.txt
+xclip -select clipboard /home/agung/Downloads/.at.txt
 # or
 # xclip -sel c ~/Downloads/access-token-dotfiles.txt
 # END #
