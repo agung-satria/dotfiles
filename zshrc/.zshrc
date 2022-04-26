@@ -1,8 +1,8 @@
 # run script automatically after login into tty
 if [[ "$(tty)" == "/dev/tty1" ]]
  then
-  ~/.local/bin/xsessions
-  # do whatever you want here
+  # ~/.local/bin/xsessions
+  # bash
 fi
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -14,9 +14,6 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/home/agung/.local/bin:/home/agung/.local/bin/i3cmds:/home/agung/.local/bin/statusbar:/usr/local/bin:$PATH
-
-
-
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -139,16 +136,20 @@ alias stopapache="sudo systemctl stop apache2.service && lampstatus"
 alias stopmysql="sudo systemctl stop mysql.service && lampstatus"
 alias startlamp="sudo systemctl start apache2.service && sudo systemctl start mysql.service && lampstatus"
 alias stoplamp="sudo systemctl stop apache2.service && sudo systemctl stop mysql.service && lampstatus"
+alias cda="cd ~/.dwm"
 alias cdd="cd ~/.dwm/dwm"
-alias killallbash="killall bash && killall /bin/bash"
+alias killbash="killall /bin/bash"
 alias rmswap="rm ~/.local/share/nvim/swap/*"
 alias x="xsessions"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias xfast="xset r rate 300 50"
 alias xdefault="xset r rate 460 25"
-alias mk="make && sudo make install && killallbash"
+alias mk="make && sudo make install && killbash"
 alias sx="startx"
+alias mm="bashmount"
+alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias cdw="cd ~/Documents/dwmmaster"
 
 export VISUAL=nvim;
 export EDITOR=nvim;
