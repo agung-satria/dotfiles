@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# The clickable help menu. Middle click to restart wm.
+
+# If dwm is running, use dwm's readme and restart.
+case $BLOCK_BUTTON in
+	1) notify-send "satu" ;;
+	2) notify-send "dua" ;;
+	3) notify-send "tiga" ;;
+	4) notify-send "empat" ;;
+	5) notify-send "lima" ;;
+	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+esac; echo "mytest"

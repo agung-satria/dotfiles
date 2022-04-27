@@ -150,6 +150,7 @@ alias sx="startx"
 alias mm="bashmount"
 alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias cdw="cd ~/Documents/dwmmaster"
+alias dl="cd ~/Music/spotdl && spotdl"
 
 export VISUAL=nvim;
 export EDITOR=nvim;

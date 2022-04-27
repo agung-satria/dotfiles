@@ -1,0 +1,16 @@
+#!/bin/sh
+
+icon=☀
+brightness="$(cat /sys/class/backlight/amdgpu_bl0/brightness)"
+total="255"
+percent="$((100*$brightness/$total))"
+# echo ☀$brightness
+
+case $BLOCK_BUTTON in
+	1) notify-send "Brightness percentage" "If brightness key doesn't work, restart rc-local.service" ;;
+  4) light -A 5;;
+  5) light -U 5;;
+  6) "$TERMINAL" -e "$EDITOR" "$0" ;;
+
+esac
+echo $icon$percent%

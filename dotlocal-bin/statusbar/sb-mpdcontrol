@@ -1,0 +1,36 @@
+#!/bin/bash
+
+PREFIX_PLAY='ﭢ  ﭠ'
+PREFIX_PAUSE='ﭢ  ﭠ'
+# PREFIX_PLAY='⏮️ ⏸️ ⏭️'
+# PREFIX_PAUSE='⏮️ ⏯️ ⏭️'
+TIME="$(mpc -p 6601 status | awk 'NR==2 { print $3 }')"
+get_mpd()
+{
+	current_song="$(mpc -p 6601 current | awk '{print substr($0,1,35)}')"
+	if [[ "$current_song" = "" ]]; then
+		echo ""
+		exit 0
+	else
+		playpause=$(mpc -p 6601 | awk '/\[.*]/{split($0, a, " "); print a[1]}')
+		if [[ "$playpause" = "[playing]" ]]; then
+			# current_song="$PREFIX_PLAY$current_song $TIME"
+			current_song="$PREFIX_PLAY"
+		elif [[ "$playpause" = "[paused]" ]]; then
+			# current_song="$PREFIX_PAUSE$current_song $TIME"
+			current_song="$PREFIX_PAUSE"
+		fi
+	fi
+  
+ now_playing="$(mpc -p 6601 current)"
+ case $BLOCK_BUTTON in
+	1) mpc -p 6601 prev ;;
+	2) mpc -p 6601 toggle ;;
+	3) mpc -p 6601 next ;;
+  6) st -c float-st-nmtui -g 100x25 ncmpcpp ;;
+esac;
+
+	echo " $current_song "
+}
+
+get_mpd
