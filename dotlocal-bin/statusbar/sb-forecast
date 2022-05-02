@@ -7,8 +7,8 @@
 # You could set up a shell alias to view the full file in a pager in the
 # terminal if desired. This function will only be run once a day when needed.
 weatherreport="${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
-# getforecast() { curl -sf "wttr.in/$LOCATION" > "$weatherreport" || exit 1 ;}
-getforecast() { curl -sf "https://wttr.in/Pekanbaru" > "$weatherreport" || exit 1 ;}
+getforecast() { curl -sf "wttr.in/$LOCATION" > "$weatherreport" || exit 1 ;}
+# getforecast() { curl -sf "https://wttr.in/Pekanbaru" > "$weatherreport" || exit 1 ;}
 
 # Some very particular and terse stream manipulation. We get the maximum
 # precipitation chance and the daily high and low from the downloaded file and
@@ -22,7 +22,7 @@ case $BLOCK_BUTTON in
 	2) getforecast && showweather ;;
 	3) notify-send "🌈 Weather module" "\- Left click for full forecast.
 - Middle click to update forecast.
-☔: Chance of rain/snow
+ ☔: Chance of rain/snow
 🥶: Daily low
 🌞: Daily high" ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;

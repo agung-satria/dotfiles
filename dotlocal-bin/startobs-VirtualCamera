@@ -1,0 +1,9 @@
+#!/bin/bash
+#Descriptions: 
+#Version: 
+#Created Date:  Mon May 2 04:53:41 PM WIB 2022
+#Modified Date: 
+#By: Agung Satria
+# START #
+st -c float-st-ncmpcpp -g 100x25+350+200 sudo modprobe v4l2loopback
+# END #

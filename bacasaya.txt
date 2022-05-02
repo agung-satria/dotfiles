@@ -1,5 +1,15 @@
 POST INSTALL DEBIAN 11
 
+sudo pacman -Syu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g
+
+obs studio and virtual camera
+sudo pacman -S obs-studio
+yay -S obs-v4l2sink
+git clone https://aur.archlinux.org/v4l2loopback-dkms.git
+cd v4l2loopback-dkms
+makepkg -scCi
+sudo modprobe v4l2loopback
+
 This dependencies is mostly to build suckless software (dwm,st,dmenu,etc)
 sudo apt install git curl wget gcc make vim neovim neofetch libx11-dev libxft-dev libxinerama-dev xorg libharfbuzz-dev rofi hsetroot rofi
 

@@ -20,11 +20,11 @@ network() {
 }
 #  ﴹ  睊  ﯥ ❎✅  🖥️ 💻 🌐  
 case $BLOCK_BUTTON in
-	1) notify-send "🔗 Connection Status" "Right click to open NMTUI" ;;
+	1) st -c float-st-nmtui -g 50x30+1200+35 nmtui ;;
+	2) notify-send "🔗 Connection Status" "Right click to open NMTUI" ;;
 	2) notify-send "🔗 Connection Status" "Right click to open NMTUI" ;;
 # - Middle click opens calcurse if installed" ;;
 	# 3) setsid -f "$TERMINAL" -e calcurse ;;
-	3) st -c float-st-nmtui -g 50x30 nmtui ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 

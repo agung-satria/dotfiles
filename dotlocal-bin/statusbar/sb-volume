@@ -8,7 +8,7 @@ case $BLOCK_BUTTON in
 - Left click to mute.
 - Right click to open pulsemixer." ;;
 	# 3) setsid -f "$TERMINAL" -e pulsemixer ;;
-	3) st -c float-st-pulsemixer -g 100x25 pulsemixer ;;
+	3) st -c float-st-pulsemixer -g 100x25+350+200 pulsemixer ;;
 	4) pamixer --allow-boost -i 1 ;;
 	5) pamixer --allow-boost -d 1 ;;
 	6) "$TERMINAL" -e "$EDITOR" "$0" ;;
