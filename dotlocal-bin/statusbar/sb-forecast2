@@ -9,7 +9,7 @@
 weatherreport="${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport"
 # getforecast() { curl -sf "wttr.in/$LOCATION" > "$weatherreport" || exit 1 ;}
 # getforecast() { curl -sf "https://wttr.in/Pekanbaru" > "$weatherreport" || exit 1 ;}
-getforecast() { curl -sf "https://wttr.in/limbanang" > "$weatherreport" || exit 1 ;}
+getforecast() { curl -sf "wttr.in/limbanang" > "$weatherreport" || exit 1 ;}
 
 # Some very particular and terse stream manipulation. We get the maximum
 # precipitation chance and the daily high and low from the downloaded file and

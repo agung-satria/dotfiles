@@ -347,8 +347,8 @@ noremap <leader>9 9gt
 "To resize windows horizontal split:
 " :map 9 <C-W><
 " :map 0 <C-W>>
-nmap <silent> <c-i> <C-W><
-nmap <silent> <c-o> <C-W>>
+nmap <silent> <c-o> <C-W><
+nmap <silent> <c-p> <C-W>>
 
 "Move focus split with ctrl+shift+{hjkl}
 "nmap <silent> <c-s-k> <C-W>k
