@@ -1,7 +1,7 @@
 POST INSTALL DEBIAN 11
 ARCHLINUX
 
-sudo pacman -Syu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g
+sudo pacman -Syu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g pulsaudio-alsa
 
 yay -S libxft-bgra
 
