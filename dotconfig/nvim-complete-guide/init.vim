@@ -54,6 +54,8 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 
 " run colorhighlight when open vim
 autocmd VimEnter * ColorHighlight
+autocmd VimEnter * ColorHighlight
+
 
 " emmet
 autocmd FileType html,css EmmetInstall
@@ -312,10 +314,10 @@ set smartindent
 "colorscheme harlequin
 "colorscheme lazarus
 " colorscheme landscape
-colorscheme codedark
+" colorscheme codedark
 " colorscheme gruvbox
 " colorscheme dracula
-" colorscheme darkbone
+colorscheme darkbone
 " colorscheme darkburn
 " colorscheme darkglass
 " colorscheme aaonehalflight
@@ -382,7 +384,10 @@ nmap <leader>e5 :colorscheme darkbone <CR>
 nmap <leader>e6 :colorscheme darkglass <CR>
 nmap <leader>sq :$put =range(0,10)
 nmap <leader>ex :'<,'>s/$/changethis/
+" remove WhiteSpace
+nmap <leader>rw :%s/\s\{1,}//g <CR>
 nmap <leader>ez :'<,'>norm Achangethis
+nmap <leader>c :noh <CR>
 
 " Bracey to <leader>lv (live server)
 nmap <leader>ls :Bracey <CR>
@@ -399,6 +404,7 @@ nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 " copy paste
 vnoremap <C-c> "+y
 vnoremap <C-x> "+x
+
 " vnoremap <C-o> :e 
 "map <C-S-v> "+p
 " map <C-v> "+p
@@ -448,5 +454,3 @@ nmap <leader>ss :split<CR>
 abbr ture true
 abbr flase false
 abbr emaila agungsatria890@gmail.com
-
-
