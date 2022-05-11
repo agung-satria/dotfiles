@@ -1,0 +1,9 @@
+#!/bin/bash
+#Descriptions: 
+#Version: 
+#Created Date:  Tue May 10 02:44:18 PM WIB 2022
+#Modified Date: 
+#By: Agung Satria
+# START #
+st -e sudo veyon-configurator
+# END #

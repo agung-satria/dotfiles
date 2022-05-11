@@ -5,5 +5,5 @@
 #Modified Date: 
 #By: Agung Satria
 # START #
-st -c float-st-ncmpcpp -g 100x25+350+200 sudo systemctl start rc-local.service
+wine ~/Downloads/winbox64.exe
 # END #

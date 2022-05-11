@@ -1,4 +1,3 @@
-set ratios 1:2:3
 # Luke's lf settings
 
 
@@ -23,10 +22,8 @@ set scrolloff 10
 set icons
 set period 1
 set hiddenfiles ".*:*.aux:*.log:*.bbl:*.bcf:*.blg:*.run.xml"
-# set cleaner '~/.config/lf/cleaner'
-# set previewer '~/.config/lf/scope'
-set previewer ~/.config/lf/preview
-set cleaner ~/.config/lf/cleaner
+set cleaner '~/.config/lf/cleaner'
+set previewer '~/.config/lf/scope'
 
 # cmds/functions
 cmd open ${{
@@ -96,11 +93,27 @@ cmd copyto ${{
 cmd setbg "$1"
 cmd bulkrename $vidir
 
+# drag and drop
+map <c-d> %dragon-drop -a -x $fx
+# cmd dragon %dragon-drop -a -x $fx
+# cmd dragon-stay %dragon-drop -a $fx
+# cmd dragon-individual %dragon-drop $fx
+# cmd cpdragon %cpdragon
+# cmd mvdragon %mvdragon
+# cmd dlfile %dlfile
+# # dragon mapping
+# map dr dragon
+# map ds dragon-stay
+# map di dragon-individual
+# map dm mvdragon
+# map dc cpdragon
+# map dl dlfile
+
 # Bindings
 map <c-f> $lf -remote "send $id select '$(fzf)'"
 map J $lf -remote "send $id cd $(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//' ${XDG_CONFIG_HOME:-$HOME/.config}/shell/bm-dirs | fzf)"
-map gh
-map g top
+# map gh
+# map g top
 map D delete
 map E extract
 map C copyto
@@ -113,6 +126,7 @@ map x $$f
 map X !$f
 map o &mimeopen $f
 map O $mimeopen --ask $f
+map . set hidden!
 
 map A rename # at the very end
 map c push A<c-u> # new rename
@@ -132,3 +146,12 @@ map Y $printf "%s" "$fx" | xclip -selection clipboard
 
 # Source Bookmarks
 source "~/.config/lf/shortcutrc"
+
+# # Movement
+map gh cd ~/
+map gd cd ~/Documents
+map gD cd ~/Downloads
+map gp cd ~/Pictures
+map gc cd ~/.config
+map gv cd ~/Videos
+map gb cd ~/.local/bin
