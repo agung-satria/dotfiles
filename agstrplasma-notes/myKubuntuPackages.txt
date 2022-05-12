@@ -1,0 +1,29 @@
+general :
+neofetch htop git gcc make curl wget neovim feh
+
+i3, st, etc:
+https://github.com/agung-satria/i3.git
+
+st:
+build-essential libxft-dev libharfbuzz-dev fonts-symbola
+sudo apt purge fonts-noto-color-emoji (in kubuntu)
+
+dependencies for suckless:
+build-essential libx11-dev libxinerama-dev sharutils suckless-tools libxft-dev stterm 
+
+ohmyzsh and powerlevel10k
+https://dev.to/abdfnx/oh-my-zsh-powerlevel10k-cool-terminal-1no0
+
+neovim:
+install vimplug and coc (find out)
+https://github.com/nodesource/distributions/blob/master/README.md#debinstall (node versi baru for ubuntu)
+https://github.com/agung-satria/neovim.git
+
+fix flickering screen when waking up after suspend:
+system settings - display and monitor - compositor
+change:
+rendering backend to "XRender"
+tearing prevention ("vsync") to "Full screen repaints"
+click apply
+log out and log backed in
+

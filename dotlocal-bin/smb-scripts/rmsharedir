@@ -1,0 +1,20 @@
+#!/bin/bash
+if [ $(whoami) != "root" ]
+then
+    echo "sudo privileges is required!"
+    exit 1
+fi
+echo -e "\nThis command will stop and REMOVE all shared folder and its contents"
+echo -e "This action can NOT be UNDONE! Be Carefull!"
+
+echo -e "CONTINUE??? Y/n: "
+read -r sure
+if [ -z $sure ]; then # -z is jika input blank/kosong
+    sudo cp /etc/samba/smb.conf.bak /etc/samba/smb.conf
+    rm -rf /home/agung/shared/*
+    echo "ALL SHARED FOLDER REMOVED SUCCESSFULLY"
+else 
+    echo "Operation Canceled!"
+fi
+
+systemctl restart smbd.service

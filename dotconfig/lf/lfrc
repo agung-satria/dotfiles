@@ -115,6 +115,7 @@ map J $lf -remote "send $id cd $(sed -e 's/\s*#.*//' -e '/^$/d' -e 's/^\S*\s*//'
 # map gh
 # map g top
 map D delete
+map <delete> delete
 map E extract
 map C copyto
 map M moveto

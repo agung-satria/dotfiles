@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.10
+Type=Application
+Terminal=false
+Exec=st ncmpcpp
+Name=Music (NCMPCPP)
+#Icon=/path/to/icon
+#Icon=st
+Icon=/home/agung/Pictures/ncmpcpp-logo.png

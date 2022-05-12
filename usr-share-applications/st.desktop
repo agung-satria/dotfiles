@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=0.8.4
+Type=Application
+Terminal=false
+Exec=st
+Name=Simple Terminal
+#Icon=/path/to/icon
+#Icon=st
+Icon=/home/agung/Pictures/st.png

@@ -1,0 +1,18 @@
+#!/bin/bash
+if [ $(whoami) != "root" ]
+then
+    echo "sudo privileges is required!"
+    exit 1
+fi
+echo -e "\nThis command will stop all shared folder"
+echo -e "But the folder is still in the directory"
+echo -e "Continue??? Y/n: \c"
+read -r sure
+if [ -z $sure ]; then # -z is jika input blank/kosong
+    sudo cp /etc/samba/smb.conf.bak /etc/samba/smb.conf
+    systemctl restart smbd.service
+    echo "ALL SHARED FOLDER REMOVED SUCCESSFULLY"
+else 
+    echo "Operation Canceled!"
+fi
+

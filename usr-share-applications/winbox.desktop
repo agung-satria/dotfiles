@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Winbox 3.32
+GenericName=Wine
+Exec=wine /home/agung/Downloads/winbox64.exe
+Terminal=false
+Categories=Wine
+Icon=/home/agung/Downloads/winbox0.png

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Mocp
+GenericName=Musci on Console Player
+Exec=mocp
+Terminal=true
+Categories=AudioVideo;Audio;Player;ConsoleOnly;
+Icon=./mocp.png

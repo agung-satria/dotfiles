@@ -1,0 +1,76 @@
+#!/bin/bash
+# if [ $(whoami) != "root" ]
+# then
+#     echo "sudo privileges is required!"
+#     exit 1
+# fi
+echo -e "Masukan nama user: \c"
+read -r user
+echo -e "Masukan nama database: \c"
+read -r database
+mysqldump -u $user -p $database > $database.sql
+echo "Database "$database" exported successfully"
+
+
+
+# echo "Use password? N/y: "
+# read -r password
+# if [ -z $password ]; then # -z is jika input blank/kosong
+#     echo "guest ok = yes" >> /etc/samba/smb.conf
+#     echo "guest only = yes" >> /etc/samba/smb.conf
+#     echo "create mode = 0777" >> /etc/samba/smb.conf
+#     echo "directory mode = 0777" >> /etc/samba/smb.conf
+#     echo "share modes = yes" >> /etc/samba/smb.conf
+#     chmod 777 /home/agung/shared/$folder
+#     # echo "public = yes" >> /etc/samba/smb.conf
+#     # echo "force user = nobody" >> /etc/samba/smb.conf
+#     # else [ $password = "y" ]; then
+# else 
+#     echo "guest ok = no" >> /etc/samba/smb.conf
+#     echo "valid user = agung" >> /etc/samba/smb.conf
+#     # echo "public = no" >> /etc/samba/smb.conf
+#     # echo "force user = agung" >> /etc/samba/smb.conf
+# fi
+
+# # echo "valid user = agung" >> /etc/samba/smb.conf
+
+# echo "Read Only? N/y: "
+# read -r readonly
+# if [ -z $readonly ]; then # -z is jika input blank/kosong
+#     echo "read only = no" >> /etc/samba/smb.conf
+# else 
+#     echo "read only= yes" >> /etc/samba/smb.conf
+# fi
+
+# echo "Browsable? Y/n: "
+# read -r browsable
+# if [ -z $browsable ]; then # -z is jika input blank/kosong
+#     echo "browsable = yes" >> /etc/samba/smb.conf
+# else 
+#     echo "browsable = yes" >> /etc/samba/smb.conf
+# fi
+
+
+
+# echo "Writable? Y/n: "
+# read -r writable
+# if [ -z $writable ]; then # -z is jika input blank/kosong
+#     echo "writable = yes" >> /etc/samba/smb.conf
+# else 
+#     echo "writable = yes" >> /etc/samba/smb.conf
+# fi
+
+
+# systemctl restart smbd.service
+# cd /home/agung/shared/$folder
+
+# # echo "Go to shared Directory? Y/n: "
+# # read -r goto
+# # if [ -z $goto ]; then # -z is jika input blank/kosong
+# #     cd /home/agung/shared/$folder
+# # else 
+# #     cd .
+# # fi
+
+
+# echo "Your folder is shared successfully!"

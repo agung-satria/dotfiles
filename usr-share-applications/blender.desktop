@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Blender 3.00
+GenericName=Wine
+Exec=/home/agung/Downloads/blender-3.0.1-linux-x64/blender
+Terminal=false
+Categories=Multimedia
+Icon=/home/agung/Downloads/blender.png
