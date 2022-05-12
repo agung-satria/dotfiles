@@ -1,3 +1,0 @@
-yay -S spotify-adblock-git
-yay -S python-spotdl
-sudo pip install redis
