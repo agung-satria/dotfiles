@@ -56,7 +56,6 @@ nnoremap <leader>n :NERDTreeToggle<CR>
 autocmd VimEnter * ColorHighlight
 autocmd VimEnter * ColorHighlight
 
-
 " emmet
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_mode='n'
@@ -384,21 +383,27 @@ nmap <leader>e5 :colorscheme darkbone <CR>
 nmap <leader>e6 :colorscheme darkglass <CR>
 nmap <leader>sq :$put =range(0,10)
 nmap <leader>ex :'<,'>s/$/changethis/
+
 " remove WhiteSpace
-nmap <leader>rw :%s/\s\{1,}//g <CR>
+" nmap <leader>rw :%s/\s\{1,}//g <CR>
+nmap <leader>rw :%s/\s\{1,}//g
+
+" change/add extension
 nmap <leader>ez :'<,'>norm Achangethis
 nmap <leader>c :noh <CR>
 
 " Bracey to <leader>lv (live server)
 nmap <leader>ls :Bracey <CR>
-
+nmap <leader>lS :BraceyStop <CR>
 
 " Quick save
 nmap <leader>w :w <CR>
 imap <F10> <ESC> :w <CR>
 nmap <F10> <ESC> :w <CR>
+nmap <leader>qq :q <CR>
 " imap <F4> <ESC> :set rnu! <CR>i
-" restart nvim
+
+" reload nvim
 nmap <leader>r :so ~/.config/nvim/init.vim<CR>
 
 " copy paste
