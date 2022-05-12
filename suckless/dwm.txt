@@ -1,3 +1,2 @@
-git clone:
-https://github.com/agung-satria/dwm
-https://github.com/agung-satria/dwmhidevacant
+git clone https://github.com/agung-satria/dwm
+git clone https://github.com/agung-satria/dwmhidevacant

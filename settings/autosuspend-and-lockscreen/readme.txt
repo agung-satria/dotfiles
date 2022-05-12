@@ -17,7 +17,5 @@ Write
   ~/.local/bin/lock
   ~/.local/bin/locker
 
-Set 'locker' ro run at startup
-
-move .zprofile to ~/
+Set 'locker' to run at startup
 
