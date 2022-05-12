@@ -1,0 +1,36 @@
+#!/bin/bash
+# ⊙━|━━⊙ 
+#  ▃▃▃▋▃▃ 
+# ▃▃▃|▃▃▃ 
+# ━━|━━ 
+# ⊙────|──⊙ *
+vollevel=$(pamixer --get-volume)
+active_sink=$(pacmd list-sinks | awk '/* index:/{print $3}')
+mutekah=$(pacmd list-sinks | grep -A 15 "index: $active_sink$" | awk '/muted/{ print $2}')
+
+if [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 0 ]] && [[ $vollevel -le 9 ]]; then
+      echo "🔊|──────────⊙$vollevel%"
+      # echo "🔊─────────⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 10 ]] && [[ $vollevel -le 19 ]]; then
+      echo "🔊─|─────────⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 20 ]] && [[ $vollevel -le 29 ]]; then
+      echo "🔊──|────────⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 30 ]] && [[ $vollevel -le 39 ]]; then
+      echo "🔊───|───────⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 40 ]] && [[ $vollevel -le 49 ]]; then
+      echo "🔊────|──────⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 50 ]] && [[ $vollevel -le 59 ]]; then
+      echo "🔊─────|─────⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 60 ]] && [[ $vollevel -le 69 ]]; then
+      echo "🔊──────|────⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 70 ]] && [[ $vollevel -le 79 ]]; then
+      echo "🔊───────|───⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 80 ]] && [[ $vollevel -le 89 ]]; then
+      echo "🔊────────|──⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 90 ]] && [[ $vollevel -le 95 ]]; then
+      echo "🔊─────────|─⊙$vollevel%"
+elif [[ "${mutekah}" = 'no' ]] && [[ $vollevel -ge 96 ]] && [[ $vollevel -le 100 ]]; then
+      echo "🔊──────────|⊙$vollevel%"
+    else
+      echo "🔇────婢────⊙0%"
+fi

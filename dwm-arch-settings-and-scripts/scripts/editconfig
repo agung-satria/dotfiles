@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# This is edited from Luke Smith maimpick scripts
+
+case "$(printf "write new note\\nbash scripts\\ndwm config.def.h\\nst config.h\\ndmenu config.h\\ndwmblocks config.h\\nxinitrc\\npicom.conf\\nncmpcpp config\\nmpd.conf\\nranger rc.conf\\nranger rifle.conf\\nneovim init.vim\\nmpv.conf\\ndunstrc\\nzshrc\\nthis script" | dmenu -l 17 -i -p "Which config to edit?")" in
+	"write new note") st -e nvim ~/note-"$(date '+%y%m%d-%H%M-%S').txt" ;;
+	"bash scripts") st -e nvim ~/.local/bin/ ;;
+	"dwm config.def.h") st -e nvim ~/.dwm/dwm/config.def.h ;;
+	"st config.h") st -e nvim ~/.dwm/st/config.h ;;
+	"dmenu config.h") st -e nvim ~/.dwm/dmenu/config.h ;;
+	"dwmblocks config.h") st -e nvim ~/.dwm/dwmblocks/config.h ;;
+	"xinitrc") st -e nvim ~/.xinitrc ;;
+	"picom.conf") st -e nvim ~/.config/picom/picom.conf ;;
+	"ncmpcpp config") st -e nvim ~/.ncmpcpp/config ;;
+	"mpd.conf") st -e nvim ~/.mpd/mpd.conf ;;
+	"ranger rc.conf") st -e nvim ~/.config/ranger/rc.conf ;;
+	"ranger rifle.conf") st -e nvim ~/.config/ranger/rifle.conf ;;
+	"neovim init.vim") st -e nvim ~/.config/nvim/init.vim ;;
+	"mpv.conf") st -e nvim ~/.config/mpv/mpv.conf ;;
+	"dunstrc") st -e nvim ~/.config/dunst/dunstrc ;;
+	"zshrc") st -e nvim ~/.zshrc ;;
+	"this script") st -e nvim ~/.local/bin/editconfig ;;
+esac

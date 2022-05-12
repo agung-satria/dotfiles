@@ -1,0 +1,25 @@
+HOW TO ENABLE TAP TO CLICK WHILE USING WINDOW MANAGER AND ENABLE NATURAL SCROLLING FOR TOUCHPAD
+
+LIHAT CONTOH FOLDER YANG SUDAH ADA (etc-X11-xorg.conf.d) di folder ini
+
+I had this problem when i was using bspwm and i3, when i switched to other distribution, and use DWM instead, this problem still came out.
+
+xf86-input-libinput or xserver-xorg-input-libinput (touchpad) just take a look, not sure if it necessary
+
+we work in /etc/X11/xorg.conf.d directory, if directory doesn't exist, create one sudo mkdir -p /etc/X11/xorg.conf.d
+
+copy the existing config file sudo cp /usr/share/X11/xorg.conf.d/{40-libinput.conf atau 30-touchpad.conf} /etc/X11/xorg.conf.d/ libinput or touchpad, it depends on your laptop, for me (touchpad on Arch, libinput on Ubuntu)
+
+cd /etc/X11/xorg.conf.d/ sudo vim 30-touchpad.conf (on my Arch system) or sudo vim 40-libinput.conf (on my Ubuntu system)
+
+add or just paste: 
+Section "InputClass"
+	Identifier "devname"
+	Driver "libinput"
+	Option "Tapping" "on"
+	Option "NaturalScrolling" "true"
+EndSection
+
+restart i3/bspwm/dwm (exit and login)
+
+Done!
