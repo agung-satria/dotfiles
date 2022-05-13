@@ -13,13 +13,49 @@ done; unset command
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
+  zshconfig="nvim ~/.zshrc" \
+  vv="nvim" \
+  zshrc="nvim ~/.zshrc" \
+  sourcez="source ~/.zshrc" \
+  ll="ls -l" \
+  l="ls -l" \
+  la="ls -la" \
+  ltr="ls -ltrh" \
+  ltra="ls -ltrah" \
+  lf="lfub" \
+  f="lfub" \
+  F="dolphin" \
+  music="mpd && ncmpcpp" \
+  startapache="sudo systemctl start httpd.service && lampstatus" \
+  startmysql="sudo systemctl start mysql.service && lampstatus" \
+  restartapache="sudo systemctl restart httpd.service && lampstatus" \
+  restartmysql="sudo systemctl restart mysql.service && lampstatus" \
+  stopapache="sudo systemctl stop httpd.service && lampstatus" \
+  stopmysql="sudo systemctl stop mysql.service && lampstatus" \
+  startlamp="sudo systemctl start httpd.service && sudo systemctl start mysql.service && lampstatus" \
+  stoplamp="sudo systemctl stop httpd.service && sudo systemctl stop mysql.service && lampstatus" \
+  killbash="killall /bin/bash" \
+  rmswap="rm ~/.local/share/nvim/swap/*" \
+  x="xsessions" \
+  poweroff="systemctl poweroff" \
+  reboot="systemctl reboot" \
+  xfast="xset r rate 300 50" \
+  xdefault="xset r rate 460 25" \
+  mk="make && sudo make install" \
+  sx="startx" \
+  mm="bashmount" \
+  update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg" \
+  dl="cd ~/Music/spotdl && spotdl" \
+  fg="figlet" \
+  fgg="figlet Arch Linux" \
+  winbox="wine ~/Downloads/winbox.exe"
+
+alias \
 	cp="cp -iv" \
 	mv="mv -iv" \
 	rm="rm -vI" \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
-	yt="yt-dlp --embed-metadata -i" \
-	yta="yt -x -f bestaudio/best" \
 	ffmpeg="ffmpeg -hide_banner"
 
 # Colorize commands when possible.
@@ -27,19 +63,15 @@ alias \
 	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
-	ccat="highlight --out-format=ansi" \
-	ip="ip -color=auto"
 
 # These common commands are just too long! Abbreviate them.
 alias \
 	ka="killall" \
 	g="git" \
-	trem="transmission-remote" \
-	YT="youtube-viewer" \
 	sdn="shutdown -h now" \
 	e="$EDITOR" \
 	v="$EDITOR" \
-	p="pacman" \
+	pp="pacman" \
 	xi="sudo xbps-install" \
 	xr="sudo xbps-remove -R" \
 	xq="xbps-query" \
@@ -47,6 +79,5 @@ alias \
 
 alias \
 	lf="lfub" \
-	magit="nvim -c MagitOnly" \
 	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
 	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \

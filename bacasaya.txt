@@ -4,7 +4,7 @@ put on $HOME as .dwm
 cp ~/.dwm/scripts/statusbar to $PATH
 
 Install package for keybinding:
-sudo pacman -Syu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g pulsaudio-alsa
+sudo pacman -Syu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g pulsaudio-alsa kde-cli-tools
 yay -S libxft-bgra
 
 Optional (for transparency)

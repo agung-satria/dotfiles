@@ -115,7 +115,7 @@ set incsearch
 set ignorecase
 set smartcase
 set number
-" set relativenumber
+set relativenumber
 set title
 set smarttab
 set cindent
@@ -382,7 +382,6 @@ nmap <leader>e4 :colorscheme darkburn <CR>
 nmap <leader>e5 :colorscheme darkbone <CR>
 nmap <leader>e6 :colorscheme darkglass <CR>
 nmap <leader>sq :$put =range(0,10)
-nmap <leader>ex :'<,'>s/$/changethis/
 
 " remove WhiteSpace
 " nmap <leader>rw :%s/\s\{1,}//g <CR>
@@ -390,7 +389,11 @@ nmap <leader>rw :%s/\s\{1,}//g
 
 " change/add extension
 nmap <leader>ez :'<,'>norm Achangethis
+nmap <leader>ex :'<,'>s/$/changethis/
 nmap <leader>c :noh <CR>
+
+" remove some last character
+nmap <leader>rl :%s/.\{1}$//
 
 " Bracey to <leader>lv (live server)
 nmap <leader>ls :Bracey <CR>
@@ -459,3 +462,7 @@ nmap <leader>ss :split<CR>
 abbr ture true
 abbr flase false
 abbr emaila agungsatria890@gmail.com
+
+" Replace all
+nnoremap S :%s//g<Left><Left>
+

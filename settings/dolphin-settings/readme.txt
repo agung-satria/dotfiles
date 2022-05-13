@@ -10,3 +10,9 @@ configure - configure dolphin (Ctrl + Shift + ,)
 startup :
 Show on startup: home/agung
 
+ctrl+shift+n = mkdir:
+configure - configure keyboard shoortcuts
+change it
+
+need to use dolphin, to fix keditfiletype5 not found :
+sudo pacman -S kde-cli-tools
