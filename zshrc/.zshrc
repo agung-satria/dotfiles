@@ -5,6 +5,7 @@ fi
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(git)
+plugins=( zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Load aliases and shortcuts if existent.
@@ -63,6 +64,8 @@ abbrev-alias g="git"
 abbrev-alias gst="git status"
 abbrev-alias gcb="git checkout --branch"
 abbrev-alias ll="ls -l"
+# abbrev-alias updatemirror="reflector -c Indonesia -a 6 --sort rate --save /etc/pacman.d/mirrorlist"
+abbrev-alias updatemirror="reflector -c ID,SG -a 6 —sort-rate —save /etc/pacman.d/mirrorlist"
 abbrev-alias mp4tomp3="ffmpeg -i video.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 audio.mp3"
 abbrev-alias mp3toogg="ffmpeg audio.mp3 -vn audio.ogg"
 abbrev-alias mkvtomp4="ffmpeg -i video.mkv video.mp4 -qscale 0"
@@ -73,3 +76,4 @@ abbrev-alias webcamrecord="ffmpeg -y -i /dev/video0 output.mkv"
 abbrev-alias mkslideshow="cat folder/* | ffmpeg -y -framerate 1.5 -f image2pipe -i - -i sound.ogg -acodec copy output.mkv"
 # make sure ffmpeg and lame are installed
 # zsh abbreviations===================================
+source /tmp/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

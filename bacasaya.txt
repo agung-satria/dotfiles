@@ -1,13 +1,10 @@
-mv ./dwmarch/ $HOME/.dwm
-put on $HOME as .dwm
-
-cp ~/.dwm/scripts/statusbar to $PATH
-
 Install package for keybinding:
-sudo pacman -Syu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g pulsaudio-alsa kde-cli-tools
-yay -S libxft-bgra
+sudo pacman -Syu ksnip calc vokoscreen ncmpcpp mpc mpd  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g pulsaudio-alsa kde-cli-tools reflector rsync qt5ct hsetroot rofi unoconv
 
-Optional (for transparency)
+yay -S libxft-bgra 
+yay -S picom-tryone-git
+
+Picom (Optional, for transparency)
 if don't use blur, comment picom autostart in dwm config.h
 source: https://www.youtube.com/watch?v=nukMt5D-Oi4
 -yay -S picom-tryone-git
@@ -15,9 +12,8 @@ source: https://www.youtube.com/watch?v=nukMt5D-Oi4
 -cd ~/.config/picom
 -cp /etc/xdg/picom.conf.example .
 
-
+Fonts:
 ttf-iosevka-nerd(install from file)
-yay -S nerd-fonts-jetbrains-mono
 yay -S checkupdates+aur
 yay -S wego (for weaterh statusbar, gaperlu kali)
 yay -S bashmount
@@ -69,7 +65,6 @@ makepkg -scCi
 sudo modprobe v4l2loopback
 
 This dependencies is mostly to build suckless software (dwm,st,dmenu,etc)
-sudo apt install git curl wget gcc make vim neovim neofetch libx11-dev libxft-dev libxinerama-dev xorg libharfbuzz-dev rofi hsetroot rofi
 
 Optional (for transparency)
 if don't use blur, comment picom autostart in dwm config.h
@@ -84,13 +79,6 @@ cd /mnt
 sudo mkdir android w10 usb1 usb2
 sudo chown -R agung:agung *
 
-application (optional):
-inkscape, gimp, blender, kdenlive, handbrake, audacity, gnome-boxes
-veyon, wine, winbox, wps-office
-
-unoconv = terminal base office converter
-available in debian repositories
-
 Change boot time grub:
 cd /etc/default
 sudo cp grub gurb.bk
@@ -99,11 +87,8 @@ set grub timeout into <x>
 ex :
 GRUB_TIMEOUT=0
 save
-sudo update-grub2
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 restart
-
-Disable display manager:
-sudo systemctl disable gdm3.service
 
 Disable splash screen (cp original file for backup):
 sudo nvim /etc/default/grub
