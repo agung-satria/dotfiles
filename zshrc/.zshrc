@@ -76,4 +76,4 @@ abbrev-alias webcamrecord="ffmpeg -y -i /dev/video0 output.mkv"
 abbrev-alias mkslideshow="cat folder/* | ffmpeg -y -framerate 1.5 -f image2pipe -i - -i sound.ogg -acodec copy output.mkv"
 # make sure ffmpeg and lame are installed
 # zsh abbreviations===================================
-source /tmp/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/agung/.mygithub/dotfiles/zshrc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

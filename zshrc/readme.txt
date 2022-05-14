@@ -3,7 +3,7 @@ comment or delete *zsh-syntax-highlighting* line, in .zshrc before next step
 
 =======================ZSH SYNTAX HIGHLIGHTNING=======================
 ===Change directory
-cd /tmp
+cd ~/.mygithub/dotfiles/zshrc/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 ===Add the syntax-highlighting extension to the .zshrc file:
