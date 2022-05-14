@@ -1,0 +1,41 @@
+sw_volume: 100
+audio_device_state:1:Pulse Audio
+audio_device_state:1:my_fifo
+state: pause
+current: 9
+time: 108.532000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:ind/Letto - Permintaan Hati.mp3
+1:ind/Letto - Sandaran Hati.mp3
+2:ind/Letto - Sebelum Cahaya.mp3
+3:ind/Letto - Ruang Rindu.mp3
+4:ind/Ada Band - Pemain Cinta.mp3
+5:ind/Ada Band - Karena Wanita (Ingin Dimengerti).mp3
+6:ind/Ada Band, Ubiet - Jalan Cahaya (feat. Ubiet).mp3
+7:breaking bjm/The Diary Of Jane.mp3
+8:breaking bjm/Breath.mp3
+9:disturbed/Disturbed - The Sound Of Silence (Audio).mp3
+10:faun/Faun - Diese kalte Nacht.mp3
+11:faun/Faun, Santiano - Tanz mit mir.mp3
+12:faun/Faun - Federkleid.mp3
+13:Endless War.mp3
+14:Scorpions - Temple Of The King.mp3
+15:Lenka - Trouble Is a Friend.mp3
+16:Firehouse - Love Of A Lifetime.mp3
+17:Firehouse - I Live My Life for You.mp3
+18:Sade - Smooth Operator - Remastered.mp3
+19:Farewell.mp3
+20:ind/Diskoria feat. Dian Sastrowardoyo - Serenata Jiwa Lara.mp3
+21:ind/Hijau Daun - Cobalah (Video Clip).mp3
+22:ind/KAKA MAIN SALAH [ Official lyric video ].mp3
+23:ind/KAKA MAIN SALAH X BELIS MAHAL - PUTRY PASANEA FT KAPTHENPUREK.mp3
+24:ind/Denny Caknan - Los Dol.mp3
+25:ind/Ndarboy Genk - Mendung Tanpo Udan.mp3
+playlist_end

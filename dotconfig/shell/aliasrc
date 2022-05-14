@@ -23,6 +23,7 @@ alias \
   ltr="ls -ltrh" \
   ltra="ls -ltrah" \
   lf="lfub" \
+  scim="sc-im" \
   f="lfub" \
   F="dolphin" \
   music="mpd && ncmpcpp" \
@@ -50,10 +51,14 @@ alias \
   fgg="figlet Arch Linux" \
   winbox="wine ~/Downloads/winbox.exe"
 
+	# cp="cp -iv" \
+	# mv="mv -iv" \
+	# rm="rm -vI" \
+
 alias \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -vI" \
+	cp="cp" \
+	mv="mv" \
+	rm="rm" \
 	bc="bc -ql" \
 	mkd="mkdir -pv" \
 	ffmpeg="ffmpeg -hide_banner"

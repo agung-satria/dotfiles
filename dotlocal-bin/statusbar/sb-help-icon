@@ -9,7 +9,7 @@
 # 		restartwm() { i3 restart ;}
 
 case $BLOCK_BUTTON in
-	1) zathura /home/agung/.dwm/help/help.pdf ;;
+	1) zathura /home/agung/.mygithub/dotfiles/suckless/help/help.pdf ;;
 	2) notify-send "❓ Help module" "\- Left click to open guide.
 - Right click to run rofi" ;;
 	3) rofi -modi drun -show drun show-icons true -columns 2 -width 45 ;;

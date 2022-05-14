@@ -1,0 +1,31 @@
+#!/bin/bash
+#Descriptions: 
+#Version: 
+#Created Date:  Fri May 13 11:26:10 AM WIB 2022
+#Modified Date: 
+#By: Agung Satria
+# START #
+dfiles="${XDG_DATA_HOME:-$HOME/.mygithub/dotfiles}"
+
+cp $HOME/.zshrc "$dfiles/zshrc"
+cp $HOME/.xinitrc "$dfiles/xinitrc"
+cp -R $HOME/.config/nvim "$dfiles/dotconfig"
+cp -R $HOME/.local/bin/* "$dfiles/dotlocal-bin"
+cp -R $HOME/.mpd/mpd.conf "$dfiles/mpd-and-ncmpcpp/.mpd"
+cp -R $HOME/.ncmpcpp "$dfiles/mpd-and-ncmpcpp"
+cp -R $HOME/.config/dunst "$dfiles/dotconfig"
+cp -R $HOME/.config/GIMP "$dfiles/dotconfig"
+cp -R $HOME/.config/{gtk-2.0,gtk-3.0} "$dfiles/dotconfig"
+cp -R $HOME/.config/ksnip "$dfiles/dotconfig"
+cp -R $HOME/.config/leafpad "$dfiles/dotconfig"
+cp -R $HOME/.config/lf "$dfiles/dotconfig"
+cp -R $HOME/.config/mpv "$dfiles/dotconfig"
+cp -R $HOME/.config/picom "$dfiles/dotconfig"
+cp -R $HOME/.config/ranger "$dfiles/dotconfig"
+cp -R $HOME/.config/shell "$dfiles/dotconfig"
+cp -R $HOME/.config/sxiv "$dfiles/dotconfig"
+cp -R $HOME/.config/vlc "$dfiles/dotconfig"
+cp -R $HOME/.config/wget "$dfiles/dotconfig"
+cp -R $HOME/.config/zathura "$dfiles/dotconfig"
+echo "✅ Ready to push all dotfiles"
+# END #

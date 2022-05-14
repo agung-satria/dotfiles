@@ -1,77 +1,75 @@
-# Luke's config for the Zoomer Shell
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# Enable colors and change prompt:
-autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-setopt autocd		# Automatically cd into typed directory.
-stty stop undef		# Disable ctrl-s to freeze terminal.
-setopt interactive_comments
-
-# History in cache directory:
-HISTSIZE=10000000
-SAVEHIST=10000000
-HISTFILE=~/.cache/zsh/history
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
 
 # Load aliases and shortcuts if existent.
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/aliasrc"
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc"
 
-# Basic auto/tab complete:
-autoload -U compinit
-zstyle ':completion:*' menu select
-zmodload zsh/complist
-compinit
-_comp_options+=(globdots)		# Include hidden files.
+export VISUAL=nvim;
+export EDITOR=nvim;
 
-# vi mode
-bindkey -v
-export KEYTIMEOUT=1
+# Reflecting automatically ~/.Xresources to xterm
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Change cursor shape for different vi modes.
-function zle-keymap-select () {
-    case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
-    esac
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+# zsh abbreviations===================================
+# declare a list of expandable aliases to fill up later
+typeset -a ealiases
+ealiases=()
+
+# write a function for adding an alias to the list mentioned above
+function abbrev-alias() {
+    alias $1
+    ealiases+=(${1%%\=*})
 }
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp" >/dev/null
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+# expand any aliases in the current line buffer
+function expand-ealias() {
+    if [[ $LBUFFER =~ "\<(${(j:|:)ealiases})\$" ]]; then
+        zle _expand_alias
+        zle expand-word
     fi
+    zle magic-space
 }
-bindkey -s '^o' 'lfcd\n'
+zle -N expand-ealias
 
-bindkey -s '^a' 'bc -lq\n'
+# Bind the space key to the expand-alias function above, so that space will expand any expandable aliases
+bindkey ' '        expand-ealias
+bindkey '^ '       magic-space     # control-space to bypass completion
+bindkey -M isearch " "      magic-space     # normal space during searches
 
-bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
+# A function for expanding any aliases before accepting the line as is and executing the entered command
+expand-alias-and-accept-line() {
+    expand-ealias
+    zle .backward-delete-char
+    zle .accept-line
+}
+zle -N accept-line expand-alias-and-accept-line
 
-bindkey '^[[P' delete-char
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-
-# Load syntax highlighting; should be last.
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
+# zsh abbreviations alias
+abbrev-alias g="git"
+abbrev-alias gst="git status"
+abbrev-alias gcb="git checkout --branch"
+abbrev-alias ll="ls -l"
+abbrev-alias mp4tomp3="ffmpeg -i video.mp4 -vn -acodec libmp3lame -ac 2 -ab 160k -ar 48000 audio.mp3"
+abbrev-alias mp3toogg="ffmpeg audio.mp3 -vn audio.ogg"
+abbrev-alias mkvtomp4="ffmpeg -i video.mkv video.mp4 -qscale 0"
+abbrev-alias avitomp4="ffmpeg -i video.avi video.mp4 -qscale 0"
+abbrev-alias mp4togif="ffmpeg -i video.mp4 video.gif"
+abbrev-alias mp4togifdefineduration="ffmpeg -i video.mp4 -ss 00:00:06<start-time> -t 4<duration> video.gif"
+abbrev-alias webcamrecord="ffmpeg -y -i /dev/video0 output.mkv"
+abbrev-alias mkslideshow="cat folder/* | ffmpeg -y -framerate 1.5 -f image2pipe -i - -i sound.ogg -acodec copy output.mkv"
+# make sure ffmpeg and lame are installed
+# zsh abbreviations===================================
