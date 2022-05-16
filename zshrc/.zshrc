@@ -62,6 +62,7 @@ zle -N accept-line expand-alias-and-accept-line
 # zsh abbreviations alias
 abbrev-alias g="git"
 abbrev-alias gst="git status"
+abbrev-alias gad="git add ."
 abbrev-alias gcb="git checkout --branch"
 abbrev-alias ll="ls -l"
 # abbrev-alias updatemirror="reflector -c Indonesia -a 6 --sort rate --save /etc/pacman.d/mirrorlist"

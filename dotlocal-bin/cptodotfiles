@@ -28,5 +28,8 @@ cp -R $HOME/.config/sxiv "$dfiles/dotconfig"
 cp -R $HOME/.config/vlc "$dfiles/dotconfig"
 cp -R $HOME/.config/wget "$dfiles/dotconfig"
 cp -R $HOME/.config/zathura "$dfiles/dotconfig"
+cp -R $HOME/.local/share/larbs "$dfiles/dotlocal-share"
+cp -R $HOME/.local/share/lyrics "$dfiles/dotlocal-share"
+cp -R $HOME/.local/share/sounds "$dfiles/dotlocal-share"
 echo "✅ Ready to push all dotfiles"
 # END #

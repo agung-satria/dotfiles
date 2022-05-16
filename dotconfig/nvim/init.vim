@@ -1,17 +1,18 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'flazz/vim-colorschemes'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
-Plug 'tpope/vim-commentary'
 Plug 'sonph/onehalf', { 'rtp': 'vim' }
 Plug 'turbio/bracey.vim'
 Plug 'vim-scripts/loremipsum'
-Plug 'dracula/vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -41,7 +42,7 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit'
   \}
 
-inoremap jk <ESC>
+inoremap jk <esc>
 "nmap <C-n> :NERDTreeToggle<CR>
 "vmap ++ <plug>NERDCommenterToggle
 "nmap ++ <plug>NERDCommenterToggle
@@ -69,6 +70,7 @@ let g:user_emmet_leader_key=',' "mengganti ctrl+y->, menjadi ,
 " agstr, disable some keybindings
 map <C-Z> <Nop>
 map <C-z> <Nop>
+imap <esc> <Nop>
 
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
@@ -92,7 +94,6 @@ let g:NERDTreeIgnore = ['^node_modules$']
 
 "commentary-vim
 autocmd FileType apache setlocal commentstring=#\ %s
-
 
 " vim-prettier
 "let g:prettier#quickfix_enabled = 0
@@ -121,6 +122,7 @@ set smarttab
 set cindent
 set tabstop=2
 set shiftwidth=2
+set noswapfile
 
 " always uses spaces instead of tab characters
 set expandtab
@@ -155,6 +157,8 @@ let g:coc_global_extensions = [
   \ 'coc-snippets',
   \ 'coc-pairs',
   \ 'coc-tsserver',
+  \ 'coc-html',
+  \ 'coc-css',
   \ 'coc-eslint', 
   \ 'coc-prettier', 
   \ 'coc-json', 
@@ -393,7 +397,7 @@ nmap <leader>ex :'<,'>s/$/changethis/
 nmap <leader>c :noh <CR>
 
 " remove some last character
-nmap <leader>rl :%s/.\{1}$//
+nmap <leader>rl :%s/.\{1}$// <left><left><left><left><left>
 
 " Bracey to <leader>lv (live server)
 nmap <leader>ls :Bracey <CR>
@@ -403,7 +407,7 @@ nmap <leader>lS :BraceyStop <CR>
 nmap <leader>w :w <CR>
 imap <F10> <ESC> :w <CR>
 nmap <F10> <ESC> :w <CR>
-nmap <leader>qq :q <CR>
+nmap <leader>x :q <CR>
 " imap <F4> <ESC> :set rnu! <CR>i
 
 " reload nvim
@@ -465,3 +469,5 @@ abbr emaila agungsatria890@gmail.com
 
 " Replace all
 nnoremap S :%s//g<Left><Left>
+" Replace line
+nnoremap D :s//g<Left><Left>

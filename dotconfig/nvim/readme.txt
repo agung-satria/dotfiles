@@ -106,4 +106,11 @@ run :checkhealth
 example error pynvim not installed
 so... pip install pynvim
 ===========================================================================================================================
+Surround Plugin
 
+cs"': for the word you're on, change the surrounding quotes from double to single
+cs'<q>: do the same, but change the single quotes to <q>
+ds": delete the double quotes around something
+ysiw[: surround the current word with brackets
+ysiw<em>: emphasize the current word (it works with text objects!) Want to know what's crazier about that? It's dot repeatable!.
+Visual Mode: select anything, and then type S. You'll be brought to the bottom of the window. Now type in what you want to wrap that with, such as <a href="/images">, and then press enter.
