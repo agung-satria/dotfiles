@@ -8,7 +8,11 @@
 dfiles="${XDG_DATA_HOME:-$HOME/.mygithub/dotfiles}"
 
 cp $HOME/.zshrc "$dfiles/zshrc"
+cp $HOME/.zshenv "$dfiles/zshrc"
+cp $HOME/.zprofile "$dfiles/zshrc"
 cp $HOME/.xinitrc "$dfiles/xinitrc"
+cp $HOME/.local/bin/lock "$dfiles/settings/autosuspend-and-lockscreen"
+cp $HOME/.local/bin/locker "$dfiles/settings/autosuspend-and-lockscreen"
 cp -R $HOME/.config/nvim "$dfiles/dotconfig"
 cp -R $HOME/.local/bin/* "$dfiles/dotlocal-bin"
 cp -R $HOME/.mpd/mpd.conf "$dfiles/mpd-and-ncmpcpp/.mpd"

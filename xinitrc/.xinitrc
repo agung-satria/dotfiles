@@ -1,7 +1,7 @@
 dwmblocks &
 mpd &
 lowbatnotif &
-hsetroot -center ~/.mygithub/dotfiles/wallpapers/22.jpg
+hsetroot -center ~/Pictures/arch.png
 xset r rate 300 50
 # picom --experimental-backends &
 picom &
