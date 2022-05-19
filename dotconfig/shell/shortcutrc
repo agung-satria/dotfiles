@@ -49,3 +49,4 @@ vvlfrc="$EDITOR /home/agung/.config/lf/lfrc" \
 vvpicom="$EDITOR /home/agung/.config/picom/picom.conf" \
 vvxinitrc="$EDITOR /home/agung/.xinitrc" \
 vvdunstrc="$EDITOR /home/agung/.config/dunst/dunstrc" \
+vvsmb="sudo $EDITOR /etc/samba/smb.conf" \

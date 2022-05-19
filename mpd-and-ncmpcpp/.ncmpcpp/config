@@ -17,6 +17,8 @@ visualizer_look = "▋▋"
 #visualizer_type = "ellipse"
 visualizer_type = "spectrum"
 
+/* execute_on_song_change = dunstctl close-all ; notify-send "🎵Now Playing" "$(mpc -p 6601 --format '%title% \n%artist% - %album%' current)" */
+
 #progressbar_look = "━━╸"
 progressbar_look = "▃▃▃"
 #progressbar_look = "─⊙ "

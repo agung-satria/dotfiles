@@ -1,0 +1,11 @@
+#!/bin/bash
+PREFIX=''
+
+get_song()
+{
+current_song="$(mpc -p 6601 current)"
+echo "$PREFIX $current_song"
+# dunstctl close-all
+# notify-send "🎵 $current_song"
+}
+get_song

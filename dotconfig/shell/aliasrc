@@ -35,7 +35,12 @@ alias \
   stopmysql="sudo systemctl stop mysql.service && lampstatus" \
   startlamp="sudo systemctl start httpd.service && sudo systemctl start mysql.service && lampstatus" \
   stoplamp="sudo systemctl stop httpd.service && sudo systemctl stop mysql.service && lampstatus" \
-  killbash="killall /bin/bash" \
+  enablesmb="sudo systemctl enable --now smb.service" \
+  restartsmb="sudo systemctl restart smb.service" \
+  smbstatus="sudo systemctl status smb.service" \
+  enablenmb="sudo systemctl enable --now nmb.service" \
+  restartnmb="sudo systemctl restart nmb.service" \
+  nmbstatus="sudo systemctl status nmb.service" \
   rmswap="rm ~/.local/share/nvim/swap/*" \
   x="xsessions" \
   poweroff="systemctl poweroff" \

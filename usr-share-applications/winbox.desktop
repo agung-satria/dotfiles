@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Winbox 3.32
+Name=Winbox 3.42
 GenericName=Wine
-Exec=wine /home/agung/Downloads/winbox64.exe
+Exec=wine /home/agung/.mygithub/dotfiles/usr-share-applications/winbox64.exe
 Terminal=false
 Categories=Wine
-Icon=/home/agung/Downloads/winbox0.png
+Icon=/home/agung/.mygithub/dotfiles/usr-share-applications/winbox0.png
