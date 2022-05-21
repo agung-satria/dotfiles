@@ -1,1 +1,5 @@
+Just for apache, mariadb(mysql), and php
 https://www.youtube.com/watch?v=VlZmeeauitw
+
+Just for phpmyadmin
+https://techviewleo.com/install-phpmyadmin-on-arch-manjaro-garuda-linux/

@@ -93,7 +93,7 @@
     (size 1008 765))
 (session-info "toplevel"
     (factory-entry "gimp-toolbox-color-dialog")
-    (position 736 342))
+    (position 985 490))
 (session-info "toplevel"
     (factory-entry "gimp-keyboard-shortcuts-dialog")
     (position 590 146)
