@@ -8,6 +8,7 @@
 dfiles="${XDG_DATA_HOME:-$HOME/.mygithub/dotfiles}"
 
 cp $HOME/.zshrc "$dfiles/zshrc"
+cp $HOME/.zshrc.ag "$dfiles/zshrc"
 cp $HOME/.zshenv "$dfiles/zshrc"
 cp $HOME/.zprofile "$dfiles/zshrc"
 # cp $HOME/.xinitrc "$dfiles/xinitrc"

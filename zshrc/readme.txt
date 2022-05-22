@@ -1,7 +1,19 @@
 ==========Install dulu zsh, oh-my-zsh, dan powerlevel10k==============
 comment or delete *zsh-syntax-highlighting* line, in .zshrc before next step
 
-=======================ZSH SYNTAX HIGHLIGHTNING=======================
+just use zsh and this plugins below:
+SYNTAX HIGHLIGHTNING
+cdg (cd ~/.mygithub)
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+Then, enable syntax highlighting in the current interactive shell:
+source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+note:
+use Luke Smith prompt (delete all *prompt* in zshrc if it installed)
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxx probably fail and messy notes:
+============x==========ZSH SYNTAX HIGHLIGHTNING=======================
 ===Change directory
 cd ~/.mygithub/dotfiles/zshrc/
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git

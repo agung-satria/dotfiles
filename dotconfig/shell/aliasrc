@@ -25,8 +25,8 @@ alias \
   ltra="ls -ltrah" \
   lf="lfub" \
   scim="sc-im" \
-  f="lfub" \
-  F="dolphin" \
+  f="ranger" \
+  F="nautilus" \
   music="mpd && ncmpcpp" \
   startapache="sudo systemctl start httpd.service && lampstatus" \
   startmysql="sudo systemctl start mysql.service && lampstatus" \
