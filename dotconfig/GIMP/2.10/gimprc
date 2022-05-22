@@ -7,8 +7,8 @@
 # Preferences dialog.
 
 (import-raw-plug-in "${gimp_plug_in_dir}/plug-ins/file-raw-placeholder/file-raw-placeholder")
-(monitor-xresolution 158)
-(monitor-yresolution 158)
+(monitor-xresolution 157)
+(monitor-yresolution 161)
 (move-tool-changes-active yes)
 (toolbox-groups no)
 (fill-options

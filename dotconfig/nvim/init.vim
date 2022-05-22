@@ -470,4 +470,4 @@ abbr emaila agungsatria890@gmail.com
 " Replace all
 nnoremap S :%s//g<Left><Left>
 " Replace line
-nnoremap D :s//g<Left><Left>
+" nnoremap X :s//g<Left><Left>
