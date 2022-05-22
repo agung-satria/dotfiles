@@ -1,11 +1,11 @@
 # GIMP user context
 
-(tool "gimp-align-tool")
+(tool "gimp-move-tool")
 (paint-info "gimp-paintbrush")
-(foreground (color-rgb 0.99215692281723022 0.94509810209274292 0.54117649793624878))
+(foreground (color-rgb 0.67910447761194037 0.054692978062706607 0.054692978062706607))
 (brush "2. Hardness 050")
 (dynamics "Dynamics Off")
-(mybrush "100% Opaque")
+(mybrush "Standard")
 (pattern "Pine")
 (gradient "FG to BG (RGB)")
 (palette "Color History")
