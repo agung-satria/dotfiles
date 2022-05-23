@@ -4,7 +4,7 @@ export TERMINAL="st"
 export BROWSER="brave-browser"
 
 # path
-export PATH=~/.local/bin:~/.local/bin/statusbar:$PATH
+export PATH=~/.local/bin:~/.local/bin/statusbar:~/.local/bin/sb:$PATH
 
 # cleaning up home folder
 

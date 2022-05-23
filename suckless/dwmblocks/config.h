@@ -5,22 +5,22 @@ static const Block blocks[] = {
 	/* {"",   "sb-mpdprev",	       1,		12}, */
 	/* {"",   "sb-mpdplay",	       1,		13}, */
 	/* {"",   "sb-mpdnext",	       1,		14}, */
-	{"",   "sb-mpdicon",	       5,		16},
+	{"",   "sbb-mpdicon",	       5,		16},
 	/* {"",   "sb-forecast",	         120,		12}, */
-	{"",   "sb-nettraf",	          1,		4},
-	{"",   "sb-battery",	          1,		3},
+	{"",   "sbb-nettraf",	          1,		4},
+	{"",   "sbb-battery",	          1,		3},
 	/* {"",   "volbar",            0,		1}, */
 	/* {"",   "volume",	          0,		1}, */
-	{"",   "sb-volume",	        0,		1},
-	{"",   "sb-brightperc",        0,		2},
-	{"",   "sb-cpuusage",          2,		5},
-	{"",   "sb-memory",	          3,		6},
+	{"",   "sbb-volume",	        0,		1},
+	{"",   "sbb-brightperc",        0,		2},
+	{"",   "sbb-cpuusage",          2,		5},
+	{"",   "sbb-memory",	          3,		6},
 	/* {"",   "sb-cputemp",	          5,		7}, */
-	{"",   "sb-diskusage",	        3,		8},
-	{"",   "sb-neticon",	          1,	  9},
-	{"",   "sb-clock",	            60,		10},
-	{"",   "sb-wifi",	            3,		11},
-	{"",   "sb-help-icon",	    0,		15},
+	{"",   "sbb-diskusage",	        3,		8},
+	{"",   "sbb-neticon",	          1,	  9},
+	{"",   "sbb-clock",	            60,		10},
+	{"",   "sbb-wifi",	            3,		11},
+	{"",   "sbb-help-icon",	    0,		15},
 
 };
 
