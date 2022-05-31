@@ -34,6 +34,7 @@ cdS="cd /home/agung/.mygithub/dotfiles/suckless" \
 vvbmfiles="$EDITOR /home/agung/.config/shell/bm-files" \
 vvbmdirs="$EDITOR /home/agung/.config/shell/bm-dirs" \
 vvb="$EDITOR /home/agung/.local/bin" \
+vvbacasaya="$EDITOR /home/agung/.mygithub/dotfiles/bacasaya.txt" \
 vvxres="$EDITOR /home/agung/.config/x11/xresources" \
 vvnvim="$EDITOR /home/agung/.config/nvim/init.vim" \
 vvnvimreadme="$EDITOR /home/agung/.config/nvim/readme.txt" \

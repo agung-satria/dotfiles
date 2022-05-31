@@ -25,7 +25,7 @@ alias \
   ltra="ls -ltrah" \
   lf="lfub" \
   scim="sc-im" \
-  f="ranger" \
+  f="lfub" \
   F="nautilus" \
   music="mpd && ncmpcpp" \
   startapache="sudo systemctl start httpd.service && lampstatus" \

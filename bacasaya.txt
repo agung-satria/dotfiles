@@ -1,16 +1,8 @@
 Install package for keybinding:
-sudo pacman -Syu ksnip calc vokoscreen ncmpcpp mpc mpd  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g pulsaudio-alsa kde-cli-tools reflector rsync qt5ct hsetroot rofi unoconv
+sudo pacman -Syu ksnip calc vokoscreen ncmpcpp mpc mpd  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ksnip calc vokoscreen ncmpcpp bpytop  ranger pavucontrol calcurse lxappearance figlet mpv pamixer pulsemixer light acpilight zathura-pdf-mupdf pamixer xclip ttf-joypixels ttf-dejavu ntfs-3g pulseaudio-alsa kde-cli-tools reflector rsync qt5ct hsetroot rofi unoconv ffmpeg ffmpegthumbnailer
 
 yay -S libxft-bgra 
 yay -S picom-tryone-git
-
-Picom (Optional, for transparency)
-if don't use blur, comment picom autostart in dwm config.h
-source: https://www.youtube.com/watch?v=nukMt5D-Oi4
--yay -S picom-tryone-git
--mkdir ~/.config/picom
--cd ~/.config/picom
--cp /etc/xdg/picom.conf.example .
 
 Fonts:
 ttf-iosevka-nerd(install from file)
