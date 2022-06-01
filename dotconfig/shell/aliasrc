@@ -15,7 +15,7 @@ done; unset command
 alias \
   zshconfig="nvim ~/.zshrc" \
   vv="nvim" \
-  vim="vim" \
+  vim="nvim" \
   zshrc="nvim ~/.zshrc" \
   sourcez="source ~/.zshrc" \
   ll="ls -l" \

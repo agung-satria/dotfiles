@@ -1,7 +1,7 @@
 dwmblocks &
 mpd &
 lowbatnotif &
-hsetroot -center ~/Pictures/wallpapers/lake.jpg
+hsetroot -cover /home/agung/Pictures/lago-di-braies-in-the-heart-of-the-dolomites-italy-wallpaper-3840x2560-wallpaper.jpg
 xset r rate 300 50
 xset s blank
 xset s 300

@@ -20,7 +20,7 @@ pip install pynvim --upgrade
 
 Conqueror of completion:
 source : https://github.com/neoclide/coc.nvim
-:CocInstall coc-html coc-css coc-json coc-tsserver
+:CocInstall coc-html coc-css coc-json coc-tsserver coc-phpls
 
 Bracey = live server
 https://github.com/turbio/bracey.vim
@@ -31,39 +31,29 @@ npm install --prefix server
 ===========================================================================================================================
 mapleader for nvim = " "
 mapleader (ctrl+y) emmet = ,
+hh in insert mode after typing tag/element
 ===========================================================================================================================
 untuk mengecek setting tambahan
 utk vimplug yang lain sudah terinstall ketika :PlugInstall diatas
 ===========================================================================================================================
-Emmet example:
-ketik html:5 -> <ctrl+y>, leader key now is , jadi, cukup ,,
-html:5 -> then ,,
-table -> then ,,
-<ctrl+y>, = ,,
-div# + ,, or # + ,,
-===========================================================================================================================
 Live Server (Bracey)
 :BraceyStart <leader>+ls
-:BraceyStop
+:BraceyStop <leader>+lS
 :BraceyReload
 ===========================================================================================================================
-<ctrl+t> = toggle Nerd tree
 <leader>+n = toggle Nerd tree
 ===========================================================================================================================
 File Search <leader>+O = search for the file you’re looking for,
-and press: CTRL+T to open it in a new tab.
-CTRL+S to open below (split view).
-CTRL+V to open to the side (vertical split).
+and press: 
+CTRL+t to open it in a new tab.
+CTRL+x to open below (split view).
+CTRL+v to open to the side (vertical split).
 Enter to open it in the currently selected panel.
 ===========================================================================================================================
 Commenting :
 gcc = comment one line
 gcgc = uncomment on line
 gcap = comment paragraph
-===========================================================================================================================
-Split size: 
-90 = increase/decrease vertically 
-Ctrl+{i,o} = increase/decrease horizontally
 ===========================================================================================================================
 Move focus split: 
 ctrl+h,j,k,l = move focus
@@ -77,29 +67,11 @@ shift+i = toggle hidden file
 ===========================================================================================================================
 Colorschemes:
 <leader>e1 :colorscheme dracula
-<leader>e2 :colorscheme gruvbox
-<leader>e3 :colorscheme codedark
-<leader>e4 :colorscheme darkburn
-<leader>e5 :colorscheme darkbone
-<leader>e6 :colorscheme darkglass
-<leader>ee :ColorHighlight
+<leader>e2 :colorscheme jellybeans
 ===========================================================================================================================
 Color Picker :
 alt+v
 rgb color anywhere (NORMAL and INSERT modes). hsl color anywhere (NORMAL and INSERT modes). rgba color anywhere (NORMAL and INSERT modes). Make sure zenity or yad is instaled
-===========================================================================================================================
-Personal need:
-
-Sequence number:
-<leader>+sq
-maka... :$put =range(0,10)
-sesuaikan sequence nya (ganti 0,10-nya)
-
-Mengganti akhir setiap baris (ex: extension)
-select dulu yang mau diganti - esc again
-<leader>ex
-or
-<leader>ez
 ===========================================================================================================================
 If error:
 run :checkhealth
