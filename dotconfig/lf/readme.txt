@@ -1,4 +1,5 @@
 Install ueberzug and dragon
+sudo pacman -S lynx
 chmod +x scope
 chmod +x cleaner
 cp cpthis content to the specified directory

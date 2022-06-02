@@ -5,7 +5,7 @@ static const Block blocks[] = {
 	/* {"",   "sb-mpdprev",	       1,		12}, */
 	/* {"",   "sb-mpdplay",	       1,		13}, */
 	/* {"",   "sb-mpdnext",	       1,		14}, */
-	{"",   "sb-mpdicon",	       5,		16},
+	{"",   "sb-mpdicon",	       1,		16},
 	/* {"",  "sb-forecast",	         120,		12}, */
 	{"",   "sb-nettraf",	          1,		4},
 	{"",   "sb-battery",	          1,		3},

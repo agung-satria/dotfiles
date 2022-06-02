@@ -9,6 +9,9 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
        
 2. install node v12.12+ and npm
 sudo pacman -S nodejs npm
+sudo pacman ripgrep (search inside file, and go to the line (with new tab/buffer-Ctrl_t)
+sudo pacman the_silver_searcher (another great file searcher)
+yay -S fd-git 
 node -v
 npm -v
 
@@ -33,9 +36,6 @@ mapleader for nvim = " "
 mapleader (ctrl+y) emmet = ,
 hh in insert mode after typing tag/element
 ===========================================================================================================================
-untuk mengecek setting tambahan
-utk vimplug yang lain sudah terinstall ketika :PlugInstall diatas
-===========================================================================================================================
 Live Server (Bracey)
 :BraceyStart <leader>+ls
 :BraceyStop <leader>+lS
@@ -43,7 +43,7 @@ Live Server (Bracey)
 ===========================================================================================================================
 <leader>+n = toggle Nerd tree
 ===========================================================================================================================
-File Search <leader>+O = search for the file you’re looking for,
+File Search <leader>+o = search for the file you’re looking for,
 and press: 
 CTRL+t to open it in a new tab.
 CTRL+x to open below (split view).

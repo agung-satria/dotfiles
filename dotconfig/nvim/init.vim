@@ -37,6 +37,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'https://github.com/airblade/vim-rooter'
 
 call plug#end()
 
@@ -47,7 +48,7 @@ inoremap jk <esc>
 
 " Airline theme:
 let g:airline_theme='simple'
-" " Airline arrow:
+" Airline arrow:
 let g:airline_powerline_fonts = 1
 
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -59,6 +60,12 @@ let g:NERDTreeDirArrowCollapsible="~"
 
 " run colorhighlight when open vim
 autocmd VimEnter * ColorHighlight
+
+" Run NerdTree when open vim
+autocmd VimEnter * NERDTreeToggle
+
+" Run FZF when open vim
+" autocmd VimEnter * FZF
 
 " emmet
 autocmd FileType html,css EmmetInstall
@@ -73,8 +80,8 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 
 " switching tabs by shift+h-l
-nnoremap H gT
-nnoremap L gt
+nmap H gT
+nmap L gt
 
 " Go to tab by number
 noremap <leader>1 1gt
@@ -179,7 +186,12 @@ nnoremap <leader>cn :let @*=expand("%:t")<CR>
 nnoremap <leader>cd :let @*=expand("%:p:h")<CR>
 
 "================================================= FZF CONFIG =================================================
-nnoremap <leader>o :Files<CR>
+" nnoremap <leader>o :Files<CR> " did same with FZF?
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>o :FZF<CR>
+nnoremap <leader>O :FZF~<CR>
+
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
@@ -188,6 +200,10 @@ let g:fzf_action = {
 " let $PATH = "C:\\Program Files\\Git\\usr\\bin;" . $PATH " for windows 10, specified git path to rendered the preview
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } " preview
 " let g:fzf_layout = { 'down': '40%' } " preview on the bottom
+
+" search also the hidden files
+let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
 "================================================= FZF CONFIG =================================================
 
 "^^^^^^^^^^^^^^^^^^^^^^^^ COC CONFIG ^^^^^^^^^^^^^^^^^^^^^
@@ -252,7 +268,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> K :call ShowDocumentation()<CR>
+nnoremap <silent> D :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -333,3 +349,14 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "________________________ COC CONFIG ______________________
+
+
+"^^^^^^^^^^^^^^^^^^^^^^^vimrooterconfig^^^^^^^^^^^^^^^^^^^^^^^^^^^
+" Everything (default)
+let g:rooter_targets = '/,*'
+
+" All files
+let g:rooter_targets = '*'
+
+let g:rooter_patterns = ['=src']
+"_______________________vimrooterconfig___________________________
