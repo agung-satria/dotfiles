@@ -171,4 +171,9 @@ abbrev-alias mkslideshow="cat folder/* | ffmpeg -y -framerate 1.5 -f image2pipe 
 # zsh abbreviations===================================
 
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80%"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=80% --border"
+# export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
+
+# export FZF_DEFAULT_COMMAND='rg --hidden -l ""'
+# export FZF_DEFAULT_COMMAND='ag -l --path-to-ignore ~/.ignore --nocolor --hidden -g ""'
+export FZF_CTRL_T_COMMAND="fd --type f --hidden --follow --exclude '{....}'"

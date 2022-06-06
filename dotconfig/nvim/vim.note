@@ -1,0 +1,15 @@
+Folding Text Tutorial:
+:set foldmethod >> to see what folding method (use manual)
+:set fdm >> to set manuam foding method
+1. Select the text you want to fold with shift+v
+2. Press `zf` >> Create fold
+3. Press `zo` >> Open fold
+4. Press `zc` >> Close fold, the line that we created a fold
+5. Press `zd` >> Delete fold
+If vim closed, the created fold is missing, so
+:mkview (but make sure ~/.local/share/nvim/view directory is exist)
+When load to the file that has a fold, 
+run:loadview 
+or Put this in init.vim:
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview

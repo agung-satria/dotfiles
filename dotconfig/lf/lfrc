@@ -149,8 +149,8 @@ source "~/.config/lf/shortcutrc"
 
 # # Movement
 map gh cd ~/
-map gd cd ~/Documents
-map gD cd ~/Downloads
+map gD cd ~/Documents
+map gd cd ~/Downloads
 map gp cd ~/Pictures
 map gm cd ~/Music
 map gc cd ~/.config

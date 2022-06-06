@@ -1,10 +1,10 @@
 set number
 set relativenumber
 set autoindent
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set smarttab
-set softtabstop=2
+set softtabstop=4
 set mouse=a
 set showcmd
 set showmode
@@ -16,6 +16,7 @@ set ignorecase
 set noswapfile
 set encoding=utf-8
 set scrolloff=8
+set expandtab
 syntax on
 
 call plug#begin()
@@ -38,6 +39,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'Asheq/close-buffers.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/airblade/vim-rooter'
+Plug 'vim-scripts/indentLine.vim'
+Plug 'KabbAmine/vCoolor.vim'
 
 call plug#end()
 
@@ -62,7 +65,7 @@ let g:NERDTreeDirArrowCollapsible="~"
 autocmd VimEnter * ColorHighlight
 
 " Run NerdTree when open vim
-autocmd VimEnter * NERDTreeToggle
+" autocmd VimEnter * NERDTreeToggle
 
 " Run FZF when open vim
 " autocmd VimEnter * FZF
@@ -360,3 +363,20 @@ let g:rooter_targets = '*'
 
 let g:rooter_patterns = ['=src']
 "_______________________vimrooterconfig___________________________
+
+" For autoload folding
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
+
+" ^^^^^^^^^^^^^^^indent plug config^^^^^^^^^^^^^^^^^^^
+let g:indentLine_color_term = 239
+let g:indentLine_char       = '▏'
+let g:indentLine_setConceal = 0
+" _______________indent plug config_____________________
+
+"^^^^^^^^^^^^^^^^^^^^^^^vcoolor config^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+let g:vcoolor_map = '<leader>eh'                     " Insert hex color.
+let g:vcool_ins_rgb_map = '<leader>er'		" Insert rgb color.
+let g:vcool_ins_hsl_map = '<leader>es'		" Insert hsl color.
+let g:vcool_ins_rgba_map = '<leader>ea'		" Insert rgba color.
+"_______________________vcoolor config_____________________

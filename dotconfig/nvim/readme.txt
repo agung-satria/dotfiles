@@ -69,9 +69,13 @@ Colorschemes:
 <leader>e1 :colorscheme dracula
 <leader>e2 :colorscheme jellybeans
 ===========================================================================================================================
+Coolor Plugin
 Color Picker :
-alt+v
-rgb color anywhere (NORMAL and INSERT modes). hsl color anywhere (NORMAL and INSERT modes). rgba color anywhere (NORMAL and INSERT modes). Make sure zenity or yad is instaled
+sudo pacman -S yad (or zenity)
+<leader>eh  :insert Hex color
+<leader>er  :insert RGB Color
+<leader>es  :insert HSL Color
+<leader>ea  :insert RGBA Color
 ===========================================================================================================================
 If error:
 run :checkhealth
