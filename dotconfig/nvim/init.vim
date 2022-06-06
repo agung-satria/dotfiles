@@ -45,7 +45,7 @@ Plug 'KabbAmine/vCoolor.vim'
 call plug#end()
 
 let mapleader = " "
-inoremap jk <esc> 
+inoremap jk <esc>
 
 :colorscheme gruvbox 
 
