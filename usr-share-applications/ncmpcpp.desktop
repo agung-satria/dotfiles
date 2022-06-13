@@ -3,6 +3,6 @@ Encoding=UTF-8
 Version=0.10
 Type=Application
 Terminal=false
-Exec=st -e ncmpcpp
+Exec=st -g 100x25 ncmpcpp
 Name=Music (ncmpcpp)
 Icon=/home/agung/.mygithub/dotfiles/usr-share-applications/ncmpcpp-logo.png

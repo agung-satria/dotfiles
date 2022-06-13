@@ -26,7 +26,7 @@ alias \
   lf="lfub" \
   scim="sc-im" \
   f="lfub" \
-  F="nautilus" \
+  F="dolphin ." \
   music="mpd && ncmpcpp" \
   startapache="sudo systemctl start httpd.service && lampstatus" \
   startmysql="sudo systemctl start mysql.service && lampstatus" \

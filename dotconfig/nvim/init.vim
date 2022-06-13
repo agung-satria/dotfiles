@@ -1,6 +1,7 @@
-set number
+set number 
+set wrap
 set relativenumber
-set autoindent
+" set autoindent
 set tabstop=4
 set shiftwidth=4
 set smarttab
@@ -17,6 +18,8 @@ set noswapfile
 set encoding=utf-8
 set scrolloff=8
 set expandtab
+set cindent
+set smartindent
 syntax on
 
 call plug#begin()
@@ -41,6 +44,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'https://github.com/airblade/vim-rooter'
 Plug 'vim-scripts/indentLine.vim'
 Plug 'KabbAmine/vCoolor.vim'
+Plug 'vim-scripts/loremipsum'
 
 call plug#end()
 
@@ -194,6 +198,7 @@ nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>o :FZF<CR>
 nnoremap <leader>O :FZF~<CR>
+nnoremap <leader>p :Files<CR>
 
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -375,8 +380,8 @@ let g:indentLine_setConceal = 0
 " _______________indent plug config_____________________
 
 "^^^^^^^^^^^^^^^^^^^^^^^vcoolor config^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-let g:vcoolor_map = '<leader>eh'                     " Insert hex color.
-let g:vcool_ins_rgb_map = '<leader>er'		" Insert rgb color.
-let g:vcool_ins_hsl_map = '<leader>es'		" Insert hsl color.
-let g:vcool_ins_rgba_map = '<leader>ea'		" Insert rgba color.
+let g:vcoolor_map =         '<F5>'      " Insert hex color.
+let g:vcool_ins_rgb_map =   '<F6>'		" Insert rgb color.
+let g:vcool_ins_rgba_map =  '<F7>'		" Insert rgba color.
+let g:vcool_ins_hsl_map =   '<F8>'		" Insert hsl color.
 "_______________________vcoolor config_____________________

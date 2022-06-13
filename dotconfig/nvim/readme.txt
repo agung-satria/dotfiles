@@ -8,7 +8,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
        
 2. install node v12.12+ and npm
-sudo pacman -S nodejs npm
+sudo pacman -S nodejs npm yad
 sudo pacman ripgrep (search inside file, and go to the line (with new tab/buffer-Ctrl_t)
 sudo pacman the_silver_searcher (another great file searcher)
 yay -S fd-git 
