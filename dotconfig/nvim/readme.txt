@@ -9,11 +9,21 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
        
 2. install node v12.12+ and npm
 sudo pacman -S nodejs npm yad
+npm i prettier
 sudo pacman ripgrep (search inside file, and go to the line (with new tab/buffer-Ctrl_t)
 sudo pacman the_silver_searcher (another great file searcher)
 yay -S fd-git 
 node -v
 npm -v
+
+for prettier:
+cd ~/.local/share/nvim/
+npm i prettier
+nvim
+:PrettierCliPath
+>> /home/agung/node_modules/.bin/prettier
+put it inside init.vim with command below:
+let g:prettier#exec_cmd_path = "/home/agung/node_modules/.bin/prettier"
 
 3. sudo pacman -S python-pip
 pip install pynvim --upgrade

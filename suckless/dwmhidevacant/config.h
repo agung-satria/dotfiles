@@ -53,6 +53,7 @@ const char *spcmd4[] = {"st", "-n", "spcalc", "-g", "50x20+660+275", "bc", "-lq"
 const char *spcmd5[] = {"st", "-n", "spncmpcpp", "-g", "100x25", "-e", "ncmpcpp", NULL };
 const char *spcmd6[] = {"st", "-n", "spcalcurse", "-g", "100x25", "-e", "calcurse", NULL };
 const char *spcmd7[] = {"st", "-n", "spnmtui", "-g", "100x25", "-e", "nmtui", NULL };
+const char *spcmd8[] = {"st", "-n", "spranger", "-g", "100x25", "-e", "ranger", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -62,6 +63,7 @@ static Sp scratchpads[] = {
 	{"spncmpcpp",   spcmd5},
 	{"spcalcurse",  spcmd6},
 	{"spnmtui",     spcmd7},
+	{"spranger",    spcmd8},
 };
 
 /* tagging */
@@ -85,7 +87,8 @@ static const Rule rules[] = {
    	{ "libreoffice-draw",		NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
    	{ "libreoffice-math",		NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
    	{ "libreoffice-base",		NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
-    { "Yad",				        NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
+    { "Yad",			       NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
+    { "winbox64.exe",	   NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
   	{ "Wine",               NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
   	{ "Arandr",             NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
   	{ "ksnip",              NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
@@ -110,6 +113,7 @@ static const Rule rules[] = {
 	{ NULL,		               "spncmpcpp", NULL,		SPTAG(4),	      	1,	         1,           0,           0,		      -1 },
 	{ NULL,		               "spcalcurse",NULL,		SPTAG(5),	      	1,	         1,           0,           0,		      -1 },
 	{ NULL,		               "spnmtui",   NULL,		SPTAG(6),	      	1,	         1,           0,           0,		      -1 },
+	{ NULL,		               "spranger",   NULL,		SPTAG(7),	      	1,	         1,           0,           0,		      -1 },
 
     /* floatthings */
     { "float-st",           NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
@@ -313,11 +317,12 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,   XK_z,      setborderpx,  {.i = 0 } },
 	{ MODKEY|ShiftMask, 	  XK_Return, togglescratch,  {.ui = 0 } },
 	{ MODKEY,            	  XK_e,	     togglescratch,  {.ui = 1 } },
-  { MODKEY|ShiftMask,    	XK_e,	     togglescratch,  {.ui = 2 } },
+  { MODKEY|ControlMask,    	XK_e,	     togglescratch,  {.ui = 2 } },
 	{ MODKEY,          	XK_apostrophe, togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,    	XK_m,	     togglescratch,  {.ui = 4 } },
   { MODKEY|ShiftMask,    	XK_c,	     togglescratch,  {.ui = 5 } },
 	{ MODKEY|ControlMask,   XK_n,	     togglescratch,  {.ui = 6 } },
+	{ MODKEY|ShiftMask,     XK_e,	     togglescratch,  {.ui = 7 } },
 	TAGKEYS(                XK_1,                      0)
 	TAGKEYS(                XK_2,                      1)
 	TAGKEYS(                XK_3,                      2)

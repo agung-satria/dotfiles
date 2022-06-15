@@ -1,5 +1,5 @@
 set number 
-set wrap
+set nowrap
 set relativenumber
 " set autoindent
 set tabstop=4
@@ -45,6 +45,9 @@ Plug 'https://github.com/airblade/vim-rooter'
 Plug 'vim-scripts/indentLine.vim'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'vim-scripts/loremipsum'
+
+" post install (yarn install | npm install) then load plugin only for editing supported files
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 
 call plug#end()
 
@@ -276,7 +279,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> D :call ShowDocumentation()<CR>
+" nnoremap <silent> D :call ShowDocumentation()<CR>
 
 function! ShowDocumentation()
   if CocAction('hasProvider', 'hover')
@@ -385,3 +388,12 @@ let g:vcool_ins_rgb_map =   '<F6>'		" Insert rgb color.
 let g:vcool_ins_rgba_map =  '<F7>'		" Insert rgba color.
 let g:vcool_ins_hsl_map =   '<F8>'		" Insert hsl color.
 "_______________________vcoolor config_____________________
+
+"^^^^^^^^^^^^^^^^^^^^^^^Prettier config^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+nmap <Leader>y <Plug>(Prettier)
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
+" read vvnvimreadme
+let g:prettier#exec_cmd_path = "/home/agung/node_modules/.bin/prettier"
+"_______________________Prettier config_____________________
