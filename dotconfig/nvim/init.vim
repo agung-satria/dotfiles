@@ -1,7 +1,5 @@
 set number 
 set nowrap
-" set relativenumber
-" set autoindent
 set tabstop=2
 set shiftwidth=2
 set smarttab
@@ -15,15 +13,16 @@ set incsearch
 set title
 set ignorecase
 set noswapfile
-set encoding=utf-8
+set encoding=UTF-8
 set scrolloff=8
 set expandtab
 set cindent
 set smartindent
+" set relativenumber
+" set autoindent
 syntax on
 
 call plug#begin()
-
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
@@ -45,45 +44,12 @@ Plug 'https://github.com/airblade/vim-rooter'
 Plug 'vim-scripts/indentLine.vim'
 Plug 'KabbAmine/vCoolor.vim'
 Plug 'vim-scripts/loremipsum'
-
-" post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-
 call plug#end()
 
+"^^^^^^^^^^^^^^^^^^^^^^^^^^ my config ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 let mapleader = " "
 inoremap jk <esc>
-
-:colorscheme gruvbox 
-
-" Airline theme:
-let g:airline_theme='simple'
-" Airline arrow:
-let g:airline_powerline_fonts = 1
-
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <leader>f :NERDTreeFocus<CR>
-nnoremap <leader>n :NERDTreeToggle<CR>
-
-let g:NERDTreeDirArrowExpandable="+"
-let g:NERDTreeDirArrowCollapsible="~"
-
-" run colorhighlight when open vim
-autocmd VimEnter * ColorHighlight
-
-" Run NerdTree when open vim
-" autocmd VimEnter * NERDTreeToggle
-
-" Run FZF when open vim
-" autocmd VimEnter * FZF
-
-" emmet
-autocmd FileType html,css EmmetInstall
-let g:user_emmet_mode='n'
-" let g:user_emmet_leader_key=' ' "change ctrl+y->, to ,
-" let g:user_emmet_leader_key='hh'
-" inoremap <A-c> <esc><C-y>,
-imap hh <esc><C-y>, hi
 
 " switching tabs by ctrl+rightLeft arrow
 nnoremap <C-Left> :tabprevious<CR>
@@ -128,10 +94,14 @@ nnoremap <leader>l <C-W>l
 nnoremap <silent> J <C-F>
 nnoremap <silent> K <C-B>
 
-" Colorscheme
-nnoremap <leader>ee :ColorHighlight <CR>
-nnoremap <leader>e1 :colorscheme gruvbox <CR>
-nnoremap <leader>e2 :colorscheme jellybeans <CR>
+" Select html element to close tag
+nmap <leader>vv V %
+" Select html element to close tag and yank it,
+" but if the tag only has 1 char (a, p, etc)
+" do the remap on the first opening bracket
+" (instead of on the iddle of the tag char
+" make sure the html Prettier
+nmap <leader>vy V % y l %
 
 " Remove whitespaces
 nnoremap <leader>rw :%s/\s\{1,}/new/g <left><left><left>
@@ -197,7 +167,60 @@ nnoremap <leader>cn :let @*=expand("%:t")<CR>
 " directory name (/something/src)
 nnoremap <leader>cd :let @*=expand("%:p:h")<CR>
 
-"================================================= FZF CONFIG =================================================
+" For autoload folding
+" autocmd BufWinLeave *.* mkview
+" autocmd BufWinEnter *.* silent loadview
+"_________________________ my config _______________________________
+
+"^^^^^^^^^^^^^^^^^^^^ dev icon config ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+" loading the plugin
+let g:webdevicons_enable = 1
+" adding the flags to NERDTree
+let g:webdevicons_enable_nerdtree = 1
+"____________________ dev icon config ___________________________
+
+"^^^^^^^^^^^^^^^^^^^^ colorscheme config ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+:colorscheme gruvbox 
+nnoremap <leader>ee :ColorHighlight <CR>
+nnoremap <leader>e1 :colorscheme gruvbox <CR>
+nnoremap <leader>e2 :colorscheme jellybeans <CR>
+nnoremap <leader>e3 :colorscheme purify <CR>
+nnoremap <leader>e4 :colorscheme solarized8_high <CR>
+nnoremap <leader>e5 :colorscheme darkblue <CR>
+"____________________ colorscheme config ___________________________
+
+"^^^^^^^^^^^^^^^^^^^^ vim airline config ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+" Airline theme:
+let g:airline_theme='simple'
+" Airline arrow:
+let g:airline_powerline_fonts = 1
+"____________________ vim airline config ___________________________
+
+"^^^^^^^^^^^^^^^^^^^^^ nerdtree config ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFocus<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+let g:NERDTreeDirArrowExpandable="+"
+let g:NERDTreeDirArrowCollapsible="~"
+
+" run colorhighlight when open vim
+autocmd VimEnter * ColorHighlight
+
+" Run NerdTree when open vim
+" autocmd VimEnter * NERDTreeToggle
+"_____________________ nerdtree config _________________________
+
+"^^^^^^^^^^^^^^^^^^^^^^ emmet config ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_mode='n'
+" let g:user_emmet_leader_key=' ' "change ctrl+y->, to ,
+" let g:user_emmet_leader_key='hh'
+" inoremap <A-c> <esc><C-y>,
+imap hh <esc><C-y>, hi
+"______________________ emmet config ___________________________
+
+"^^^^^^^^^^^^^^^^^^^^^^^ FZF CONFIG ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 " nnoremap <leader>o :Files<CR> " did same with FZF?
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
@@ -217,9 +240,9 @@ let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } } " preview
 " search also the hidden files
 let $FZF_DEFAULT_COMMAND = 'ag -l -g ""'
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -l -g ""'
-"================================================= FZF CONFIG =================================================
+"_______________________ FZF CONFIG ____________________________
 
-"^^^^^^^^^^^^^^^^^^^^^^^^ COC CONFIG ^^^^^^^^^^^^^^^^^^^^^
+"^^^^^^^^^^^^^^^^^^^^^^^ COC CONFIG ^^^^^^^^^^^^^^^^^^^^^
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
@@ -361,10 +384,10 @@ command! -nargs=0 OR   :call     CocActionAsync('runCommand', 'editor.action.org
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-"________________________ COC CONFIG ______________________
+"_______________________ coc config _____________________
 
 
-"^^^^^^^^^^^^^^^^^^^^^^^vimrooterconfig^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"^^^^^^^^^^^^^^^^^^ vimrooter config ^^^^^^^^^^^^^^^^^^^^^^
 " Everything (default)
 let g:rooter_targets = '/,*'
 
@@ -372,26 +395,22 @@ let g:rooter_targets = '/,*'
 let g:rooter_targets = '*'
 
 let g:rooter_patterns = ['=src']
-"_______________________vimrooterconfig___________________________
+"__________________ vimrooter config ______________________
 
-" For autoload folding
-" autocmd BufWinLeave *.* mkview
-" autocmd BufWinEnter *.* silent loadview
-
-" ^^^^^^^^^^^^^^^indent plug config^^^^^^^^^^^^^^^^^^^
+"^^^^^^^^^^^^^^^^^^ indent plug config ^^^^^^^^^^^^^^^^^^^
 let g:indentLine_color_term = 239
 let g:indentLine_char       = '▏'
 let g:indentLine_setConceal = 0
-" _______________indent plug config_____________________
+" _________________ indent plug config ___________________
 
-"^^^^^^^^^^^^^^^^^^^^^^^vcoolor config^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"^^^^^^^^^^^^^^^^^^^^ vcoolor config ^^^^^^^^^^^^^^^^^^^^^^^^^
 let g:vcoolor_map =         '<F5>'      " Insert hex color.
 let g:vcool_ins_rgb_map =   '<F6>'		" Insert rgb color.
 let g:vcool_ins_rgba_map =  '<F7>'		" Insert rgba color.
 let g:vcool_ins_hsl_map =   '<F8>'		" Insert hsl color.
-"_______________________vcoolor config_____________________
+"____________________ vcoolor config _______________________
 
-"^^^^^^^^^^^^^^^^^^^^^^^Prettier config^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"^^^^^^^^^^^^^^^^^^^ Prettier config ^^^^^^^^^^^^^^^^^^^^^^^^^
 nmap <Leader>y <Plug>(Prettier)
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -400,6 +419,6 @@ let g:prettier#config#tab_width = '2'
 " read vvnvimreadme
 let g:prettier#exec_cmd_path = "/home/agung/.local/share/nvim/node_modules/.bin/prettier"
 
-"prettier and save
+"prettier and ave
 nmap <Leader>w <Plug>(Prettier) :w<CR>
-"_______________________Prettier config_____________________
+"___________________ Prettier config _________________________
