@@ -1,5 +1,5 @@
 ===========================================================================================================================
-INSTALL AGUNG'S NVIM CONFIG
+AGSTR NVIM CONFIG
 
 Move init.vim file to ~/.config/nvim
 
@@ -11,6 +11,7 @@ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 sudo pacman -S nodejs npm yad
 sudo pacman ripgrep (search inside file, and go to the line (with new tab/buffer-Ctrl_t)
 sudo pacman the_silver_searcher (another great file searcher)
+sudo npm install -g live-server
 yay -S fd-git 
 node -v
 npm -v
@@ -21,8 +22,9 @@ npm i prettier
 nvim
 :PrettierCliPath
 >> /home/agung/.local/share/nvim/node_modules/.bin/prettier
-put it inside init.vim with command below:
+put it inside init.vim with command below (already in init.vim):
 let g:prettier#exec_cmd_path = "/home/agung/.local/share/nvim/node_modules/.bin/prettier"
+<leader>w => Pretttier and Save
 
 3. sudo pacman -S python-pip
 pip install pynvim --upgrade
@@ -34,7 +36,7 @@ Conqueror of completion:
 source : https://github.com/neoclide/coc.nvim
 :CocInstall coc-html coc-css coc-json coc-tsserver coc-phpls
 
-Bracey = live server
+Bracey = live server (not installed)
 https://github.com/turbio/bracey.vim
 read the instruction to install:
 cd ~/.vim/plugged/bracey.vim
@@ -81,15 +83,10 @@ Colorschemes:
 Coolor Plugin
 Color Picker :
 sudo pacman -S yad (or zenity)
-<leader>eh  :insert Hex color
-<leader>er  :insert RGB Color
-<leader>es  :insert HSL Color
-<leader>ea  :insert RGBA Color
-===========================================================================================================================
-If error:
-run :checkhealth
-example error pynvim not installed
-so... pip install pynvim
+F5 :insert Hex color
+F6 :insert RGB Color
+F7 :insert RGBA Color
+F8 :insert HSL Color
 ===========================================================================================================================
 Surround Plugin
 

@@ -171,7 +171,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
 static const char *rofi[]  = { "rofi", "-modi", "drun", "-show", "drun", "show-icons", "true", "-columns", "2", "-width", "45", NULL };
-static const char *termcmd[]  = { "st", NULL };
+/* static const char *termcmd[]  = { "st", NULL }; */
 
 #include <X11/XF86keysym.h>
 #include "movestack.c"
@@ -235,7 +235,8 @@ static Key keys[] = {
   /*___________________________________________________agstr____________________________________________________ */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_r,      spawn,          {.v = rofi } },
-	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+	/* { MODKEY,                       XK_Return, spawn,          {.v = termcmd } }, */
+  { MODKEY,                       XK_Return, spawn,    SHCMD("tabbed -r 2 st -w ''") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY|ControlMask,           XK_w,      tabmode,        {-1} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
