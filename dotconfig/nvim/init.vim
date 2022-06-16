@@ -1,11 +1,11 @@
 set number 
 set nowrap
-set relativenumber
+" set relativenumber
 " set autoindent
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set smarttab
-set softtabstop=4
+set softtabstop=2
 set mouse=a
 set showcmd
 set showmode
@@ -151,8 +151,10 @@ nnoremap <leader>cc :noh <CR>
 " Remove some last chacacter
 nnoremap <leader>rl :%s/.\{1}$// <left><left><left><left><left>
 
+" Save (use with prettier and save instead/ see prettier config bellow)
+" nnoremap <leader>w :w <CR> 
+
 " Quick save
-nnoremap <leader>w :w <CR>
 inoremap <F10> <ESC> :w <CR>
 nnoremap <F10> <ESC> :w <CR>
 
@@ -393,7 +395,11 @@ let g:vcool_ins_hsl_map =   '<F8>'		" Insert hsl color.
 nmap <Leader>y <Plug>(Prettier)
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
+let g:prettier#config#tab_width = '2'
 
 " read vvnvimreadme
-let g:prettier#exec_cmd_path = "/home/agung/node_modules/.bin/prettier"
+let g:prettier#exec_cmd_path = "/home/agung/.local/share/nvim/node_modules/.bin/prettier"
+
+"prettier and save
+nmap <Leader>w <Plug>(Prettier) :w<CR>
 "_______________________Prettier config_____________________
