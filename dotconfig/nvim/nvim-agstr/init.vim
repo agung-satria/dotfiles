@@ -32,7 +32,7 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'https://github.com/terryma/vim-multiple-cursors'
 Plug 'chrisbra/colorizer'
 Plug 'mattn/emmet-vim'
 Plug 'alvan/vim-closetag'
@@ -50,6 +50,10 @@ call plug#end()
 "^^^^^^^^^^^^^^^^^^^^^^^^^^ my config ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 let mapleader = " "
 inoremap jk <esc>
+
+" toggle buffer, instead of Ctrl+6 or Ctrl-^ whatever
+nnoremap <leader><tab> :b#<cr>
+nnoremap <tab> :b#<cr>
 
 " switching tabs by ctrl+rightLeft arrow
 nnoremap <C-Left> :tabprevious<CR>
@@ -171,6 +175,19 @@ nnoremap <leader>cd :let @*=expand("%:p:h")<CR>
 " autocmd BufWinLeave *.* mkview
 " autocmd BufWinEnter *.* silent loadview
 "_________________________ my config _______________________________
+"^^^^^^^^^^^^^^^^^^^^ multi cursor config ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+"____________________ multi cursor config ___________________________
 
 "^^^^^^^^^^^^^^^^^^^^ dev icon config ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 " loading the plugin
