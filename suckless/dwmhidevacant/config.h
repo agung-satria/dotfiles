@@ -196,7 +196,7 @@ static Key keys[] = {
 	{ MODKEY,			          XK_minus,	spawn, SHCMD("pamixer -d 5; pkill -RTMIN+1 dwmblocks") },
   { MODKEY,		            XK_0,   	spawn, SHCMD("pactl set-sink-mute @DEFAULT_SINK@ toggle; pkill -RTMIN+1 dwmblocks") },
   /* mpd control */
- 	{ MODKEY,			          XK_p,		        	spawn,		SHCMD("mpc -p 6601 toggle") },
+ 	{ MODKEY,			          XK_slash,		        	spawn,		SHCMD("mpc -p 6601 toggle") },
 	{ MODKEY,			          XK_comma,	        spawn,		SHCMD("mpc -p 6601 prev") },
 	{ MODKEY|ShiftMask,		  XK_comma,	        spawn,		SHCMD("mpc -p 6601 seek 0%") },
 	{ MODKEY,			          XK_period,	      spawn,		SHCMD("mpc -p 6601 next") },
@@ -217,6 +217,7 @@ static Key keys[] = {
   { MODKEY|ShiftMask,  		XK_w,             spawn,		SHCMD("brave --incognito") },
   { MODKEY|ShiftMask,  		XK_d,             spawn,		SHCMD("samedir") },
 	{ MODKEY,			          XK_grave,	        spawn,	  SHCMD("dmenuunicode") },
+	{ MODKEY,			          XK_p,	  		      spawn,	  SHCMD("arandr") },
 	{ MODKEY,			          XK_a,   	        spawn,	  SHCMD("dunstctl history-pop") },
 	{ MODKEY|ShiftMask,		  XK_a,   	        spawn,	  SHCMD("dunstctl close-all") },
 	{ MODKEY|ControlMask,		XK_a,   	        spawn,	  SHCMD("dunstctl close") },
