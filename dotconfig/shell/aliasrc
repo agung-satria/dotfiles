@@ -14,8 +14,10 @@ done; unset command
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
   zshconfig="nvim ~/.zshrc" \
+  v="nvim" \
   vv="nvim" \
   vim="nvim" \
+  vi="nvim" \
   zshrc="nvim ~/.zshrc" \
   sourcez="source ~/.zshrc" \
   ll="ls -l" \

@@ -188,3 +188,10 @@ export FZF_CTRL_T_COMMAND="fd --type f --hidden --follow --exclude '{....}'"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias luamake=/home/agung/lua-language-server/3rd/luamake/luamake
+
+# pnpm
+export PNPM_HOME="/home/agung/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
