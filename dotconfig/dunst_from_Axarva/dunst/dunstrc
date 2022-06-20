@@ -54,10 +54,12 @@
     separator_height = 2
 
     # Padding between text and separator.
-    padding = 8
+    padding = 12
+    # padding = 8
 
     # Horizontal padding.
-    horizontal_padding = 8
+    horizontal_padding = 12 
+    # horizontal_padding = 8
 
     # Defines width in pixels of frame around the notification window.
     # Set to 0 to disable.
@@ -284,7 +286,8 @@
 
 [urgency_normal]
     background = "#121212"
-    foreground = "#ffd5cd"
+    # foreground = "#ffd5cd"
+    foreground = "#ffffff"
     frame_color = "#181A20"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
