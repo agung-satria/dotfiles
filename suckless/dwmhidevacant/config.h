@@ -9,10 +9,10 @@
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 1;        /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
-static const unsigned int gappih    = 13;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 13;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 13;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 13;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 10;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 10;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 10;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 16;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -25,7 +25,7 @@ enum showtab_modes { showtab_never, showtab_auto, showtab_nmodes, showtab_always
 static const int showtab			= showtab_auto;        /* Default tab bar show mode */
 static const int toptab				= False;               /* False means bottom tab bar */
 
-static const char *fonts[]        = { "Arimo Nerd Font:style:medium:size=14",
+static const char *fonts[]        = { "JetBrainsMono Nerd Font:style:medium:size=14",
                                       "JoyPixels:size=14:antialias=true:autohint=true", 
                                       "Material Design Icons-Regular:size=14"};
 static const char dmenufont[]     = "JetBrainsMono Nerd Font:style:medium:size=14";
@@ -77,6 +77,7 @@ static const Rule rules[] = {
    	{ "Gimp-2.10",	        NULL,			  NULL,		    1 << 5,	      1,           0,			      0,           0,         -1 },
    	{ "Firefox",            NULL,			  NULL,		    1 << 1,	 		  1,           0,			      0,          -1,         -1 },
     { "St",				          NULL,       NULL,       0,            1,           0,           1,           0,         -1 },
+    { "tabbed",				          NULL,       NULL,       0,            1,           0,           1,           0,         -1 },
    	{ "Brave-browser",      NULL,			  NULL,		    1 << 1,			  1,           0,			      0,           1,         -1 },
    	{ "Inkscape",	          NULL,			  NULL,		    1 << 6,	      1,           0,			      0,          -1,         -1 },
    	{ "libreoffice",	      NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
@@ -125,6 +126,7 @@ static const Rule rules[] = {
     { "float-st-bpytop",    NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
     { "float-st-gotop",     NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
     { "float-st-obs",       NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
+    { "float-st-pulsemixer",NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
 };
 
 /* layout(s) */
@@ -182,7 +184,7 @@ static Key keys[] = {
   /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^agstr^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ */
 	{ MODKEY,			XK_F2,		spawn,		SHCMD("displayselect") },
 	{ MODKEY,			XK_F3,		spawn,		SHCMD("dmenuhandler") },
-	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
+	{ MODKEY,			XK_F4,		spawn,		SHCMD(TERMINAL " -c float-st-pulsemixer -g 100x25 pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F9,		spawn,		SHCMD("dmenumount") },
 	{ MODKEY,			XK_F10,		spawn,		SHCMD("dmenuumount") },
 	{ MODKEY,			XK_F11,		spawn,		SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },

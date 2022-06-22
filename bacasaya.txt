@@ -16,6 +16,12 @@ yay -S checkupdates+aur
 yay -S wego (for weaterh statusbar, gaperlu kali)
 yay -S bashmount
 
+Ok - https://github.com/rxyhn/dotfiles:
+paru -Sy picom-git wezterm rofi acpi acpid acpi_call upower lxappearance-gtk3 \
+jq inotify-tools polkit-gnome xdotool xclip gpick ffmpeg blueman redshift \
+pipewire pipewire-alsa pipewire-pulse pamixer brightnessctl feh scrot \
+mpv mpd mpc mpdris2 python-mutagen ncmpcpp playerctl --neede
+
 ===DISABLE POWEROFF BUTTON===
 Check your /etc/systemd/logind.conf file. It should look like this
 
