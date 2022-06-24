@@ -363,8 +363,8 @@ def_key "L"
 #def_key "!"
 #  toggle_separators_between_albums
 #
-#def_key "L"
-#  toggle_lyrics_fetcher
+def_key "ctrl-l"
+  toggle_lyrics_fetcher
 #
 #def_key "F"
 #  fetch_lyrics_in_background

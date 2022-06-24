@@ -18,6 +18,7 @@ alias \
   vv="nvim" \
   vim="nvim" \
   vi="nvim" \
+  lfl="leafpad" \
   zshrc="nvim ~/.zshrc" \
   sourcez="source ~/.zshrc" \
   ll="ls -l" \
