@@ -175,6 +175,10 @@ abbrev-alias mp4togif="ffmpeg -i video.mp4 video.gif"
 abbrev-alias mp4togifdefineduration="ffmpeg -i video.mp4 -ss 00:00:06<start-time> -t 4<duration> video.gif"
 abbrev-alias webcamrecord="ffmpeg -y -i /dev/video0 output.mkv"
 abbrev-alias mkslideshow="cat folder/* | ffmpeg -y -framerate 1.5 -f image2pipe -i - -i sound.ogg -acodec copy output.mkv"
+abbrev-alias tn="tmux new-session -s "
+abbrev-alias tk="tmux kill-session -t "
+abbrev-alias tr="tmux rename-session -t "
+abbrev-alias tc="tmux attach -t "
 # make sure ffmpeg and lame are installed
 # zsh abbreviations===================================
 

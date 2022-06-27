@@ -19,8 +19,11 @@ alias \
   vim="nvim" \
   vi="nvim" \
   t="tmux" \
-  tk="tmux kill-server && echo tmux session killed" \
+  ta="tmux a" \
+  tK="tmux kill-server && echo tmux session killed" \
+  tl="tmux ls" \
   mux="tmuxinator" \
+  c="clear" \
   lfl="leafpad" \
   zshrc="nvim ~/.zshrc" \
   sourcez="source ~/.zshrc" \

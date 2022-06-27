@@ -16,6 +16,9 @@ yay -S checkupdates+aur
 yay -S wego (for weaterh statusbar, gaperlu kali)
 yay -S bashmount
 
+For tmux workspace:
+yay -S tmuxinator
+
 Ok - https://github.com/rxyhn/dotfiles:
 paru -Sy picom-git wezterm rofi acpi acpid acpi_call upower lxappearance-gtk3 \
 jq inotify-tools polkit-gnome xdotool xclip gpick ffmpeg blueman redshift \

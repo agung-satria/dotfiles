@@ -44,15 +44,18 @@ root: ~/test/
 # Controls whether the tmux session should be attached to automatically. Defaults to true.
 # attach: false
 
+name: work
+root: ~/test
+
 windows:
   - server_stuff:
       layout: tiled
       panes:
+        - echo "1"
+        - echo "2"
+  - code_stuff:
+      layout: edac,278x70,0,0[278x50,0,0,1,278x19,0,51,15]  
+      panes:
         - vim
-        - vim
-        - vim
-  - code_stuff: vim
+        - echo "empty"
   - misc_stuff:
-  - notes:
-    - cd ~/test
-    - vim

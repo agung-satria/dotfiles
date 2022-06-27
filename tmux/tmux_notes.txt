@@ -1,0 +1,81 @@
+.tmux.conf
+After edit config file:
+<prefix> :source-file /absolute/path/to/your/.tmux.conf
+
+Windows:
+ctrlb c = create new window
+ctrlb , = rename window
+ctrlb {p-n} = go to windows Previous-Next
+ctrlb w = lists windows
+ctrlb {1...9} = go to window number
+
+Panes:
+ctrlb % = split vertically
+ctrlb " = horizontally
+ctrlb :splt = horizontally
+
+Sessions:
+tmux new -s <sessionname>
+ctrlb d = detach session
+tmux list-sessions
+tmux ls = same thing list-sessions
+tmux attach -t <sessionname>
+tmux kill-session -t <sessionname>
+
+# session management
+tmux ls (or tmux list-sessions)
+tmux new -s session-name
+Ctrl-b d Detach from session
+tmux attach -t [session name]
+tmux kill-session -t session-name
+
+Ctrl-b c Create new window
+Ctrl-b d Detach current client
+Ctrl-b l Move to previously selected window
+Ctrl-b n Move to the next window
+Ctrl-b p Move to the previous window
+Ctrl-b & Kill the current window
+Ctrl-b , Rename the current window
+Ctrl-b q Show pane numbers (used to switch between panes)
+Ctrl-b o Switch to the next pane
+Ctrl-b ? List all keybindings
+
+# moving between windows
+Ctrl-b n (Move to the next window)
+Ctrl-b p (Move to the previous window)
+Ctrl-b l (Move to the previously selected window)
+Ctrl-b w (List all windows / window numbers)
+Ctrl-b window number (Move to the specified window number, the
+default bindings are from 0 -- 9)
+
+# Tiling commands
+Ctrl-b % (Split the window vertically)
+CTRL-b " (Split window horizontally)
+Ctrl-b o (Goto next pane)
+Ctrl-b q (Show pane numbers, when the numbers show up type the key to go to that pane)
+Ctrl-b { (Move the current pane left)
+Ctrl-b } (Move the current pane right)
+
+# Make a pane its own window
+Ctrl-b : "break-pane"
+
+# add to ~/.tmux.conf
+bind | split-window -h
+bind - split-window -v
+
+===========================================
+Shared session:
+Just attach to a same session, its do the same even use by different user
+===========================================
+
+Install TPM
+Google it (easy)
+
+## Tmux Resurrect
+Prefix C-s save sessions
+Prefix C-r restore saved sessions
+
+Read!:
+https://dev.to/iggredible/useful-tmux-configuration-examples-k3g
+install tmuxinator for automate workflow
+yay -S tmuxinator

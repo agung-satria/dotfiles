@@ -2,8 +2,10 @@
 
 #define XF86MonBrightnessDown 0x1008ff03
 #define XF86MonBrightnessUp 0x1008ff02
-#define TERMINAL "st"
-#define TERMCLASS "St"
+// #define TERMINAL "st"
+// #define TERMCLASS "St"
+#define TERMINAL  "alacritty"
+#define TERMCLASS "alacritty"
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -76,8 +78,7 @@ static const Rule rules[] = {
   	/* class                instance    title       tags mask     iscentered   isfloating   isterminal  noswallow    monitor */
    	{ "Gimp-2.10",	        NULL,			  NULL,		    1 << 5,	      1,           0,			      0,           0,         -1 },
    	{ "Firefox",            NULL,			  NULL,		    1 << 1,	 		  1,           0,			      0,          -1,         -1 },
-    { "St",				          NULL,       NULL,       0,            1,           0,           1,           0,         -1 },
-    { "tabbed",				          NULL,       NULL,       0,            1,           0,           1,           0,         -1 },
+   	{ "Whatsapp-for-linux", NULL,			  NULL,		    1 << 7,	 		  1,           0,			      0,          -1,         -1 },
    	{ "Brave-browser",      NULL,			  NULL,		    1 << 1,			  1,           0,			      0,           1,         -1 },
    	{ "Inkscape",	          NULL,			  NULL,		    1 << 6,	      1,           0,			      0,          -1,         -1 },
    	{ "libreoffice",	      NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
@@ -88,8 +89,12 @@ static const Rule rules[] = {
    	{ "libreoffice-draw",		NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
    	{ "libreoffice-math",		NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
    	{ "libreoffice-base",		NULL,			  NULL,		    1 << 2,	      1,           0,			      0,          -1,         -1 },
-    { "Yad",			       NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
-    { "winbox64.exe",	   NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
+    { "St",				          NULL,       NULL,       0,            1,           0,           1,           0,         -1 },
+    { "tabbed",				      NULL,       NULL,       0,            1,           0,           1,           0,         -1 },
+    { "Yad",			          NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
+    { "yad",			          NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
+    { "vCoolor",			      NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
+    { "winbox64.exe",	      NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
   	{ "Wine",               NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
   	{ "Arandr",             NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
   	{ "ksnip",              NULL,       NULL,       0,            1,           1,           0,           0,         -1 },
@@ -173,7 +178,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray1, NULL };
 static const char *rofi[]  = { "rofi", "-modi", "drun", "-show", "drun", "show-icons", "true", "-columns", "2", "-width", "45", NULL };
-static const char *termcmd[]  = { "st", NULL };
+// static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "alacritty", NULL };
 
 #include <X11/XF86keysym.h>
 #include "movestack.c"
@@ -213,7 +219,7 @@ static Key keys[] = {
   { MODKEY,								XK_Escape,        spawn,		SHCMD("sysact") },
   { MODKEY|ShiftMask,			XK_q,             spawn,		SHCMD("sysact") },
   { MODKEY,           		XK_g,             spawn,		SHCMD("editconfig") },
-	{ ControlMask|ALTKEY,		XK_l,   	        spawn,	  SHCMD("slock") },
+	{ MODKEY|ControlMask,		XK_l,   	        spawn,	  SHCMD("slock") },
   { MODKEY|ALTKEY,        XK_x,             spawn,		SHCMD("betterlockscreen --lock") },
   { MODKEY,            		XK_w,             spawn,		SHCMD("brave") },
   { MODKEY|ShiftMask,  		XK_w,             spawn,		SHCMD("brave --incognito") },
@@ -288,8 +294,8 @@ static Key keys[] = {
 	{ MODKEY|ALTKEY|ShiftMask,      XK_8,      incrohgaps,     {.i = -3 } },
 	{ MODKEY|ALTKEY,                XK_9,      incrovgaps,     {.i = +3 } },
 	{ MODKEY|ALTKEY|ShiftMask,      XK_9,      incrovgaps,     {.i = -3 } },
-  { MODKEY|ControlMask,           XK_l,      view_adjacent,  { .i = +1 } },
-	{ MODKEY|ControlMask,           XK_h,      view_adjacent,  { .i = -1 } },
+	{ MODKEY|ShiftMask,             XK_i,      view_adjacent,  { .i = -1 } },
+  { MODKEY|ShiftMask,             XK_o,      view_adjacent,  { .i = +1 } },
 	{ MODKEY,			XK_i,		shiftview,	{ .i = -1 } },
 	{ MODKEY,			XK_o,	  shiftview,	{ .i = 1 } },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
@@ -322,7 +328,7 @@ static Key keys[] = {
 	{ MODKEY|ControlMask,   XK_z,      setborderpx,  {.i = 0 } },
 	{ MODKEY|ShiftMask, 	  XK_Return, togglescratch,  {.ui = 0 } },
 	{ MODKEY,            	  XK_e,	     togglescratch,  {.ui = 1 } },
-  { MODKEY|ControlMask,    	XK_e,	     togglescratch,  {.ui = 2 } },
+  { MODKEY|ControlMask,   XK_e,	     togglescratch,  {.ui = 2 } },
 	{ MODKEY,          	XK_apostrophe, togglescratch,  {.ui = 3 } },
 	{ MODKEY|ShiftMask,    	XK_m,	     togglescratch,  {.ui = 4 } },
   { MODKEY|ShiftMask,    	XK_c,	     togglescratch,  {.ui = 5 } },
@@ -364,24 +370,24 @@ static Button buttons[] = {
 	 * to control these separately (i.e. to retain the feature to move a tiled window
 	 * into a floating position).
 	 */
-	{ ClkClientWin,  MODKEY,    Button1,     moveorplace,    {.i = 1} },
-	{ ClkClientWin,  MODKEY,    Button2,     togglefloating, {0} },
-	{ ClkClientWin,  MODKEY,    Button3,     resizemouse,    {0} },
-	{ ClkClientWin,  MODKEY|ShiftMask, Button1, dragmfact,   {0} },
-	{ ClkClientWin,  MODKEY|ShiftMask, Button3, dragcfact,   {0} },
-	{ ClkTagBar,     0,         Button1,     view,           {0} },
-	{ ClkTagBar,     0,         Button3,     toggleview,     {0} },
-	{ ClkTagBar,     MODKEY,    Button1,     tag,            {0} },
-	{ ClkTagBar,     MODKEY,    Button3,     toggletag,      {0} },
-	{ ClkTabBar,     0,         Button1,     focuswin,       {0} },
-  { ClkTagBar,     ShiftMask, Button4,     view_adjacent,  { .i = -1 } },
-	{ ClkTagBar,     ShiftMask, Button5,     view_adjacent,  { .i = +1 } },
-	{ ClkTagBar,		0,		Button4,	shiftview,	{.i = -1} },
-	{ ClkTagBar,		0,		Button5,	shiftview,	{.i = 1} },
- 	{ ClkClientWin,		MODKEY,		Button4,	incrgaps,	{.i = +3} },
-	{ ClkClientWin,		MODKEY,		Button5,	incrgaps,	{.i = -3} },
- 	{ ClkClientWin,		MODKEY|ControlMask,		Button4,	setborderpx,  {.i = +1 } },
-	{ ClkClientWin,		MODKEY|ControlMask,		Button5,	setborderpx,  {.i = -1 } },
+	{ ClkClientWin,  MODKEY,    Button1,    moveorplace,    {.i = 1} },
+	{ ClkClientWin,  MODKEY,    Button2,    togglefloating, {0} },
+	{ ClkClientWin,  MODKEY,    Button3,    resizemouse,    {0} },
+	{ ClkClientWin,  MODKEY|ShiftMask, Button1, dragmfact,  {0} },
+	{ ClkClientWin,  MODKEY|ShiftMask, Button3, dragcfact,  {0} },
+	{ ClkTagBar,     0,         Button1,    view,           {0} },
+	{ ClkTagBar,     0,         Button3,    toggleview,     {0} },
+	{ ClkTagBar,     MODKEY,    Button1,    tag,            {0} },
+	{ ClkTagBar,     MODKEY,    Button3,    toggletag,      {0} },
+	{ ClkTabBar,     0,         Button1,    focuswin,       {0} },
+  { ClkTagBar,     ShiftMask, Button4,    view_adjacent,  { .i = -1 } },
+	{ ClkTagBar,     ShiftMask, Button5,    view_adjacent,  { .i = +1 } },
+	{ ClkTagBar,		 0,		      Button4,	  shiftview,	    {.i = -1} },
+	{ ClkTagBar,		 0,		      Button5,	  shiftview,	    {.i = 1} },
+ 	{ ClkClientWin,	 MODKEY,		Button4,	  incrgaps,	      {.i = +3} },
+	{ ClkClientWin,	 MODKEY,		Button5,	  incrgaps,	      {.i = -3} },
+ 	{ ClkClientWin,	 MODKEY|ControlMask,		Button4,  setborderpx,  {.i = +1 } },
+	{ ClkClientWin,	 MODKEY|ControlMask,		Button5,  setborderpx,  {.i = -1 } },
 
 
 };
