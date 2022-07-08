@@ -1,14 +1,14 @@
 #!/bin/bash
 #Descriptions: 
-
-dwmblocks &
-mpd &
-lowbatnotif &
-hsetroot -cover /home/agung/Pictures/lago-di-braies-in-the-heart-of-the-dolomites-italy-wallpaper-3840x2560-wallpaper.jpg &
+hsetroot -fill ~/Pictures/wallpapers/Japan-Nagasaki-night-cherry-blossom-urban-street-Asia.jpg
 xset r rate 300 50
 xset s blank
 xset s 300
-#picom &
-slocker &
+mpd
+lowbatnotif &
 dunst &
+nm-applet &
+slstatus &
+picom &
+# natural-mouse-scroll-false.sh &
 st -e sudo chown agung:agung /sys/class/backlight/amdgpu_bl0/*

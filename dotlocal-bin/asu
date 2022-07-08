@@ -1,0 +1,4 @@
+#!/bin/bash
+#Descriptions: 
+mpd
+xset r rate 300 50
